@@ -6,5 +6,17 @@ export {
     authStart,
     logout,
     logoutSucceed,
-    authCheckState
-} from './auth'
+    authCheckState,
+    onLoginSuccess,
+} from './auth';
+
+export {
+    onChangeLanguageAction,
+    onChangeLanguageStartAction,
+    onShowHideSpinner,
+    initiateBrowserLanguageAction,
+} from './content'
+
+export {
+    onSetupNewsFeed,
+} from './appData'

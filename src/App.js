@@ -5,79 +5,97 @@ import classes from './App.scss';
 import Layout from './hoc/Layout/Layout';
 import HomePage from './containers/HomePage/HomePage';
 import AsyncComponent from './hoc/AsyncComponent/AsyncComponent';
+import * as actions from './store/actions';
+import Spinner from './components/UI/Spinner/Spinner';
 
 // Lazy-load components
 const asyncAuth = AsyncComponent(() => {
-    return import('./containers/Auth/Auth')
-})
+  return import('./containers/Auth/Auth');
+});
 const asyncSkete = AsyncComponent(() => {
-    return import('./containers/Skete/Skete')
-})
+  return import('./containers/Skete/Skete');
+});
 const asyncCemetery = AsyncComponent(() => {
-    return import('./containers/Cemetery/Cemetery')
-})
+  return import('./containers/Cemetery/Cemetery');
+});
 const asyncClergy = AsyncComponent(() => {
-    return import('./containers/Clergy/Clergy')
-})
+  return import('./containers/Clergy/Clergy');
+});
 const asyncDirections = AsyncComponent(() => {
-    return import('./containers/Directions/Directions')
-})
+  return import('./containers/Directions/Directions');
+});
 const asyncContactUs = AsyncComponent(() => {
-    return import('./containers/ContactUs/ContactUs')
-})
+  return import('./containers/ContactUs/ContactUs');
+});
 const asyncDonations = AsyncComponent(() => {
-    return import('./containers/Donations/Donations')
-})
-
+  return import('./containers/Donations/Donations');
+});
 
 class App extends Component {
 
-    componentDidMount() {
-        // some logic here before app loads
+  componentDidMount() {
+    this.props.onTryAutoSignUp();
+    this.props.onInitiateBrowserLanguageStart();
+  }
+
+  componentWillUnmount() {
+
+  }
+
+  render() {
+
+    let routes = (
+        <Switch>
+          <Route path={'/login'} component={asyncAuth}/>
+          <Route path={'/skete'} component={asyncSkete}/>
+          <Route path={'/cemetery'} component={asyncCemetery}/>
+          <Route path={'/clergy'} component={asyncClergy}/>
+          <Route path={'/directions'} component={asyncDirections}/>
+          <Route path={'/contact-us'} component={asyncContactUs}/>
+          <Route path={'/donations'} component={asyncDonations}/>
+          <Route path={'/'} exact component={HomePage}/>
+          <Redirect to={'/'}/>
+        </Switch>
+    );
+
+    if (false) {
+      routes = (
+          <Switch>
+          </Switch>
+      );
     }
 
-    render() {
+    let app = (
+        <div className={classes.App}>
+          <Layout>
+            {routes}
+          </Layout>
+        </div>
+    );
 
-        let routes = (
-            <Switch>
-                <Route path={'/login'} component={asyncAuth}/>
-                <Route path={'/skete'} component={asyncSkete}/>
-                <Route path={'/cemetery'} component={asyncCemetery}/>
-                <Route path={'/clergy'} component={asyncClergy}/>
-                <Route path={'/directions'} component={asyncDirections}/>
-                <Route path={'/contact-us'} component={asyncContactUs}/>
-                <Route path={'/donations'} component={asyncDonations}/>
-                <Route path={'/'} exact component={HomePage}/>
-                <Redirect to={'/'}/>
-            </Switch>
-        );
-
-
-        if (false) {
-            routes = (
-                <Switch>
-                </Switch>
-            );
-        }
-
-        return (
-            <div className={classes.App}>
-                <Layout>
-                    {routes}
-                </Layout>
-            </div>
-        );
+    if (this.props.showSpinnerInsteadOfApp) {
+      app = <Spinner/>;
     }
+
+    return (
+        app
+    );
+  }
 }
-
 
 const mapStateToProps = state => {
-    return {}
-}
+  return {
+    isAuthenticated: state.auth.token !== null,
+    showSpinnerInsteadOfApp: state.language.showSpinnerInsteadOfApp,
+  };
+};
 
 const mapDispatchToProps = dispatch => {
-    return {}
-}
-
+  return {
+    onTryAutoSignUp: () => dispatch(actions.authCheckState()),
+    onInitiateBrowserLanguageStart: () => dispatch(
+        actions.initiateBrowserLanguageAction()),
+  };
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

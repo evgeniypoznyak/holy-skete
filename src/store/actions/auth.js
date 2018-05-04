@@ -55,3 +55,9 @@ export const authCheckState = () => {
         type: actionTypes.AUTH_CHECK_STATE,
     };
 };
+
+export const onLoginSuccess = () => {
+    return  {
+        type: actionTypes.AUTH_LOGIN_SUCCESS,
+    };
+}
