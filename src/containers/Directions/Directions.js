@@ -3,14 +3,14 @@ import classes from './Directions.scss';
 
 class Directions extends Component {
 
-    render() {
+  render() {
 
-        return (
-            <div className={classes.Directions}>Directions</div>
-        )
+    return (
+        <div className={classes.Directions}>Directions</div>
+    );
 
-    }
+  }
 
 }
 
-export default Directions
+export default Directions;

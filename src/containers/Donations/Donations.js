@@ -3,14 +3,14 @@ import classes from './Donations.scss';
 
 class Donations extends Component {
 
-    render() {
+  render() {
 
-        return (
-            <div className={classes.Donations}>Donations</div>
-        )
+    return (
+        <div className={classes.Donations}>Donations</div>
+    );
 
-    }
+  }
 
 }
 
-export default Donations
+export default Donations;

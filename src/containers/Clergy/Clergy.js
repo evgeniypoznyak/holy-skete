@@ -3,14 +3,14 @@ import classes from './Clergy.scss';
 
 class Clergy extends Component {
 
-    render() {
+  render() {
 
-        return (
-            <div className={classes.Clergy}>Clergy</div>
-        )
+    return (
+        <div className={classes.Clergy}>Clergy</div>
+    );
 
-    }
+  }
 
 }
 
-export default Clergy
+export default Clergy;

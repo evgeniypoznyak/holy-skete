@@ -3,14 +3,14 @@ import classes from './Cemetery.scss';
 
 class Cemetery extends Component {
 
-    render() {
+  render() {
 
-        return (
-            <div className={classes.Cemetery}>Cemetery</div>
-        )
+    return (
+        <div className={classes.Cemetery}>Cemetery</div>
+    );
 
-    }
+  }
 
 }
 
-export default Cemetery
+export default Cemetery;
