@@ -2,8 +2,36 @@
 //  @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 //}
 
-body {
+body, div {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+//
+//@import url("/fonts/LibreBaskerville");
+//@import "/fonts/LibreBaskerville";
+//@import url("/fonts/GreatVibes");
+//@import url("/fonts/GreatVibes/Greatvibes-Regular.ttf");
+//@import "/fonts/GreatVibes" ;
+
+//@import url('/fonts/LibreBaskerville/LibreBaskerville-Regular.ttf');
+//@import url('/fonts/GreatVibes/Greatvibes-Regular.ttf');
+//
+
+//
+
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('/fonts/LibreBaskerville/LibreBaskerville-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Great Vibes';
+  src: url('/fonts/GreatVibes/GreatVibes-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

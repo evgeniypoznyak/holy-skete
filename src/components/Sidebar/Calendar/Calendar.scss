@@ -1,3 +1,17 @@
 .Calendar {
 
+  .Centered {
+    text-align: center;
+  }
+
+  .SaintName {
+    font-size: 0.8rem;
+  }
+
+  .HolidayPicture {
+    -webkit-box-shadow: 10px 12px 40px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 12px 40px -4px rgba(0,0,0,0.75);
+    box-shadow: 10px 12px 40px -4px rgba(0,0,0,0.75);
+  }
+
 }

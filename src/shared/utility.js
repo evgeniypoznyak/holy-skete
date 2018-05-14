@@ -45,3 +45,5 @@ export const browserLanguage = function browserLocale () {
         return navigator.language
     }
 }
+
+export const stripHtmlTags = element => element.replace(/<\/?[^>]+(>|$)/g, "");

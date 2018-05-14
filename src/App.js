@@ -34,8 +34,8 @@ const asyncDonations = AsyncComponent(() => {
 class App extends Component {
 
   componentDidMount() {
-    this.props.onTryAutoSignUp();
     this.props.onInitiateBrowserLanguageStart();
+    this.props.onTryAutoSignUp();
   }
 
   componentWillUnmount() {
@@ -93,6 +93,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onTryAutoSignUp: () => dispatch(actions.authCheckState()),
+
     onInitiateBrowserLanguageStart: () => dispatch(
         actions.initiateBrowserLanguageAction()),
   };

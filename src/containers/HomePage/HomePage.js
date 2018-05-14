@@ -1,91 +1,49 @@
 import React, {Component} from 'react';
 import classes from './HomePage.scss';
-import * as actions from '../../store/actions';
 import {connect} from 'react-redux';
-import {Button, UncontrolledAlert} from 'reactstrap';
-import Spinner from '../../components/UI/Spinner/Spinner';
+import {UncontrolledAlert} from 'reactstrap';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Calendar from '../../components/Sidebar/Calendar/Calendar';
 import News from '../../components/Sidebar/News/News';
+import MainContent from '../../components/MainContent/MainContent';
+import TopImage from '../../components/TopImage/TopImage';
 
 class HomePage extends Component {
 
   render() {
-    let test = <Spinner/>;
-    if (this.props.news[0]) {
-      test =
-          <div className="row">
-            <div className="col">
-              <p>{this.props.news[0].title}</p>
-              <p>
-                <img alt='' height={100}
-                     src={this.props.news[0].enclosure.link}/>
-              </p>
-              <img alt='' hidden={true}
-                   src={this.props.russian.content.news[0].enclosure.link}/>
-              <img alt='' hidden={true}
-                   src={this.props.english.content.news[0].enclosure.link}/>
-            </div>
-          </div>;
-
-    }
-
     return (
-        <div className={classes.HomePage}>Home
-          <div>
-            <button className='btn btn-outline-danger'>TEST</button>
-            <Button color={'danger'}>Danger!</Button>
-            <UncontrolledAlert color="info">
-              I am an alert and I can be dismissed!
-            </UncontrolledAlert>
+        <div className={classes.HomePage}>
+          <TopImage topImageData={this.props.topImage} />
 
-            <Button
-                color={'success'}
-                onClick={() => this.props.onChangeLanguageStart('english')}
-            >English</Button>
+          <div className='container-fluid'>
 
-            <Button
-                color={'primary'}
-                onClick={() => this.props.onChangeLanguageStart('russian')}
-            >Russian</Button>
+            <div className="row">
+
+              <div className="col col-md-8">
+                <MainContent
+                    paragraphs={this.props.content.mainParagraph}></MainContent>
+              </div>
+
+              <div className="col col-md-4">
+                <Sidebar>
+                  <Calendar/>
+                  <News
+                      news={this.props.news}
+                      russian={this.props.russian.languageData.news.newsContent}
+                      english={this.props.english.languageData.news.newsContent}
+                  />
+                </Sidebar>
+              </div>
+
+
+            </div>
 
 
           </div>
 
-          <Sidebar>
-            <Calendar/>
-            <News/>
-          </Sidebar>
-
-          <div className='container'>
-            {test}
-            <div className="row">
-              <div className="col">
-                {this.props.content.mainParagraph.paragraph1}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                {this.props.content.mainParagraph.paragraph2}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                {this.props.content.mainParagraph.paragraph3}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                {this.props.content.mainParagraph.paragraph4}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                {this.props.content.mainParagraph.paragraph5}
-              </div>
-            </div>
-
-          </div>
+          <UncontrolledAlert color="info">
+            I am an alert and I can be dismissed!
+          </UncontrolledAlert>
         </div>
 
     );
@@ -97,17 +55,19 @@ class HomePage extends Component {
 const mapStateToProps = state => {
   return {
     isAuthenticated: state.auth.token !== null,
-    content: state.appData.data[state.language.languageSelected].content.pages.homePage,
+    content: state.appData.data[state.language.languageSelected].languageData.pages.homePage,
     russian: state.appData.data.russian,
     english: state.appData.data.english,
-    news: state.appData.data[state.language.languageSelected].content.news,
+    news: state.appData.data[state.language.languageSelected].languageData.news,
+    calendarDate: state.appData.data[state.language.languageSelected].languageData.calendar.date,
+    calendarHolidays: state.appData.data[state.language.languageSelected].languageData.calendar.holidays,
+    topImage: state.appData.data[state.language.languageSelected].languageData.topImage,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onChangeLanguageStart: (language) => dispatch(
-        actions.onChangeLanguageStartAction(language)),
+
   };
 };
 

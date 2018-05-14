@@ -1,3 +1,10 @@
 .News {
 
 }
+
+:global {
+  .card {
+    background-color: gray;
+    margin-top: 1rem;
+  }
+}

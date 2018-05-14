@@ -7,11 +7,12 @@ import './index.scss';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import authReducer from './store/reducers/auth';
-import languageReducer from './store/reducers/content';
+import languageReducer from './store/reducers/language';
 import appDataReducer from './store/reducers/appData';
 import createSagaMiddleware from 'redux-saga';
-import {watchAuth, watchLanguage} from './store/sagas';
+import {watchAuth, watchLanguage, watchCalendar, watchNews} from './store/sagas';
 import './bootstrap.scss';
+
 
 let composeEnhancers = compose;
 if (process.env.NODE_ENV === 'development' &&
@@ -31,8 +32,10 @@ const store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(sagaMiddleware),
 ));
 
-sagaMiddleware.run(watchAuth);
 sagaMiddleware.run(watchLanguage);
+sagaMiddleware.run(watchAuth);
+sagaMiddleware.run(watchCalendar);
+sagaMiddleware.run(watchNews);
 
 const app = (
     <Provider store={store}>

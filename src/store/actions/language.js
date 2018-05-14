@@ -24,6 +24,6 @@ export const onShowHideSpinner = (showSpinner) => {
 
 export const initiateBrowserLanguageAction = () => {
     return {
-        type: actionTypes.CONTENT_INITIATE,
+        type: actionTypes.INIT_LANGUAGE,
     }
 }

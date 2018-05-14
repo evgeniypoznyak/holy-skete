@@ -15,8 +15,11 @@ export {
     onChangeLanguageStartAction,
     onShowHideSpinner,
     initiateBrowserLanguageAction,
-} from './content'
+} from './language'
 
 export {
     onSetupNewsFeed,
+    onSetupCalendar,
+    onInitNews,
+    onInitCalendar,
 } from './appData'
