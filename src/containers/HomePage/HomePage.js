@@ -7,13 +7,15 @@ import Calendar from '../../components/Sidebar/Calendar/Calendar';
 import News from '../../components/Sidebar/News/News';
 import MainContent from '../../components/MainContent/MainContent';
 import TopImage from '../../components/TopImage/TopImage';
+import Carousel from '../../components/Carousel/Carousel';
+import Slideshow from '../../components/Slideshow/Slideshow';
 
 class HomePage extends Component {
 
   render() {
     return (
         <div className={classes.HomePage}>
-          <TopImage topImageData={this.props.topImage} />
+          <TopImage topImageData={this.props.topImage}/>
 
           <div className='container-fluid'>
 
@@ -41,6 +43,9 @@ class HomePage extends Component {
 
           </div>
 
+          <Slideshow/>
+          <Carousel />
+
           <UncontrolledAlert color="info">
             I am an alert and I can be dismissed!
           </UncontrolledAlert>
@@ -66,9 +71,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-
-  };
+  return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

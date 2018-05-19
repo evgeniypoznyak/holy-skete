@@ -92,10 +92,10 @@ const initialState = {
           skete: {},
         },
         menu: {
-          menuHomePage: 'Домашняя страница',
+          menuHomePage: 'Главная',
           menuSkete: 'Скит',
           menuCemetery: 'Кладбище',
-          menuClergy: 'Настоятель',
+          menuClergy: 'Духовенство',
           menuDirections: 'Как добраться',
           menuContactUs: 'Связаться с нами',
           menuDonations: 'Пожертвовать',

@@ -134,10 +134,10 @@ module.exports = {
           {
 
             //eot|otf|webp|svg|ttf|woff|woff2
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.jpg$/,],
             loader: require.resolve('url-loader'),
             options: {
-              limit: 10000,
+              limit: 10000000,
               name: 'static/media/[name].[hash:8].[ext]',
             },
           },
