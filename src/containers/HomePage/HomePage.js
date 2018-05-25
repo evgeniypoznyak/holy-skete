@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import classes from './HomePage.scss';
 import {connect} from 'react-redux';
-import {UncontrolledAlert} from 'reactstrap';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Calendar from '../../components/Sidebar/Calendar/Calendar';
 import News from '../../components/Sidebar/News/News';
 import MainContent from '../../components/MainContent/MainContent';
 import TopImage from '../../components/TopImage/TopImage';
 import Carousel from '../../components/Carousel/Carousel';
-import Slideshow from '../../components/Slideshow/Slideshow';
 import image1 from '../../assets/images/home-page-slider/001.jpg';
 import image2 from '../../assets/images/home-page-slider/002.jpg';
 import image3 from '../../assets/images/home-page-slider/003.jpg';
@@ -26,10 +24,10 @@ class HomePage extends Component {
 
     render() {
 
+
         return (
             <div className={classes.HomePage}>
                 <TopImage topImageData={this.props.topImage}/>
-                <Slideshow/>
 
                 <div className='container-fluid'>
 
@@ -38,13 +36,21 @@ class HomePage extends Component {
                         <div className="col col-md-8">
                             <MainContent
                                 paragraphs={this.props.content.mainParagraph}></MainContent>
+                            <div className={classes.SlideShowWrapper}>
+                                <button
+                                    className='btn btn-outline-primary btn-lg'
+                                    onClick={() => {
+                                        this.props.history.push('/slideshow')
+                                    }}>
+                                    {this.props.content.mainPageSlideshowButtonText}
+                                </button>
+                            </div>
                             <Carousel
                                 width={100}
                                 images={this.state.sliderImages}
                                 animationDuration={4000}
                             />
                         </div>
-
                         <div className="col col-md-4">
                             <Sidebar>
                                 <Calendar/>
@@ -55,17 +61,8 @@ class HomePage extends Component {
                                 />
                             </Sidebar>
                         </div>
-
-
                     </div>
-
-
                 </div>
-
-
-                <UncontrolledAlert color="info">
-                    I am an alert and I can be dismissed!
-                </UncontrolledAlert>
             </div>
 
         );

@@ -12,6 +12,9 @@ import Spinner from './components/UI/Spinner/Spinner';
 const asyncAuth = AsyncComponent(() => {
   return import('./containers/Auth/Auth');
 });
+const asyncSlideShow = AsyncComponent(() => {
+  return import('./containers/SlideShow/SlideShow');
+});
 const asyncSkete = AsyncComponent(() => {
   return import('./containers/Skete/Skete');
 });
@@ -48,6 +51,7 @@ class App extends Component {
         <Switch>
           <Route path={'/login'} component={asyncAuth}/>
           <Route path={'/skete'} component={asyncSkete}/>
+          <Route path={'/slideshow'} component={asyncSlideShow}/>
           <Route path={'/cemetery'} component={asyncCemetery}/>
           <Route path={'/clergy'} component={asyncClergy}/>
           <Route path={'/directions'} component={asyncDirections}/>
