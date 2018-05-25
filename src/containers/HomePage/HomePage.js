@@ -30,11 +30,7 @@ class HomePage extends Component {
             <div className={classes.HomePage}>
                 <TopImage topImageData={this.props.topImage}/>
                 <Slideshow/>
-                <Carousel
-                    width={30}
-                    images={this.state.sliderImages}
-                    animationDuration={4000}
-                    />
+
                 <div className='container-fluid'>
 
                     <div className="row">
@@ -42,6 +38,11 @@ class HomePage extends Component {
                         <div className="col col-md-8">
                             <MainContent
                                 paragraphs={this.props.content.mainParagraph}></MainContent>
+                            <Carousel
+                                width={30}
+                                images={this.state.sliderImages}
+                                animationDuration={4000}
+                            />
                         </div>
 
                         <div className="col col-md-4">
