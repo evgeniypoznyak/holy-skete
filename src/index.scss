@@ -8,30 +8,52 @@ body, div {
   font-family: sans-serif;
 }
 
-//
-//@import url("/fonts/LibreBaskerville");
-//@import "/fonts/LibreBaskerville";
-//@import url("/fonts/GreatVibes");
-//@import url("/fonts/GreatVibes/Greatvibes-Regular.ttf");
-//@import "/fonts/GreatVibes" ;
-
-//@import url('/fonts/LibreBaskerville/LibreBaskerville-Regular.ttf');
-//@import url('/fonts/GreatVibes/Greatvibes-Regular.ttf');
-//
-
-//
-
-
 @font-face {
-  font-family: 'Libre Baskerville';
-  src: url('/fonts/LibreBaskerville/LibreBaskerville-Regular.ttf') format('truetype');
+  font-family: 'BadScript';
+  src: url('/fonts/Bad_Script/BadScript-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CaveatRegular';
+  src: url('/fonts/Caveat/Caveat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MarckScript';
+  src: url('/fonts/Marck_Script/MarckScript-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AdmirationPains';
+  src: url('/fonts/AdmirationPains/AdmirationPains.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Great Vibes';
-  src: url('/fonts/GreatVibes/GreatVibes-Regular.ttf') format('truetype');
+  font-family: 'Notperfect';
+  src: url('/fonts/Notperfect/Notperfect.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'WolfgangAmadeusMozart';
+  src: url('/fonts/WolfgangAmadeusMozart/WolfgangAmadeusMozart.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AstoriaScriptTwo';
+  src: url('/fonts/Astoria script Two/Astoria script Two.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Prata';
+  src: url('/fonts/Prata/Prata-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

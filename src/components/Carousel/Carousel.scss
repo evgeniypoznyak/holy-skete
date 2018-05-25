@@ -1,3 +1,36 @@
 .Carousel {
 
+  .ImageWrapper {
+    position: relative;
+    height: 100%;
+
+    .StartImage {
+      width: 100%;
+      position: relative;
+      opacity: 0;
+    }
+
+    .ActiveImage {
+      animation-name: show;
+      animation-timing-function: ease-in;
+      opacity: 1 !important;
+    }
+
+    .Images {
+      width: calc(100%);
+      position: absolute;
+      opacity: 0;
+      left: 0;
+      top: 0;
+    }
+
+  }
+
+}
+
+@keyframes show {
+  0%   {opacity: 0}
+  25% {opacity: 1}
+  75% {opacity: 1}
+  100% {opacity: 0}
 }

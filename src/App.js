@@ -8,7 +8,7 @@ import AsyncComponent from './hoc/AsyncComponent/AsyncComponent';
 import * as actions from './store/actions';
 import Spinner from './components/UI/Spinner/Spinner';
 
-// Lazy-load components
+// Lazy-load componentsff
 const asyncAuth = AsyncComponent(() => {
   return import('./containers/Auth/Auth');
 });
