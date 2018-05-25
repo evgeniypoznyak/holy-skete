@@ -39,7 +39,7 @@ class HomePage extends Component {
                             <MainContent
                                 paragraphs={this.props.content.mainParagraph}></MainContent>
                             <Carousel
-                                width={30}
+                                width={100}
                                 images={this.state.sliderImages}
                                 animationDuration={4000}
                             />

@@ -52,7 +52,6 @@ class Carousel extends Component {
                     <img className={classes.StartImage} src={this.props.images[0]} alt='img'/>
                     {images}
                 </div>
-                <button onClick={this.changeState}>Change</button>
 
             </div>
         )
