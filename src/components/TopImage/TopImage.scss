@@ -1,7 +1,22 @@
 .TopImage {
+  position: relative;
+
   .Image {
     width: 100%;
     height: auto;
   }
+
+  .TextHeader {
+    position: absolute;
+    color: white;
+    left: calc(100%/2);
+    top: calc(100%/2);
+  }
+
+  .TextSubHeader {
+    position: absolute;
+    color: white;
+  }
+
 }
 

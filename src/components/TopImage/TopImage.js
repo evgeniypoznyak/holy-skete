@@ -6,14 +6,15 @@ import TopImage from '../../assets/images/top-header.jpg';
 
 
 const topImage = (props) => {
-  return (
-      <div className={classes.TopImage}>
+    return (
+        <div className={classes.TopImage}>
+            <div className={classes.TextHeader}>Russian Orthodox Church Outside Russia</div>
+            <div className={classes.TextSubHeader}>Sub-Header</div>
+            <img className={classes.Image} src={TopImage} alt='img'/>
+            {/*<img className={classes.Image} src={props.topImageData.topImageUrl}  alt='img'/>*/}
 
-          <img className={classes.Image} src={TopImage}  alt='img'/>
-          {/*<img className={classes.Image} src={props.topImageData.topImageUrl}  alt='img'/>*/}
-
-      </div>
-  );
+        </div>
+    );
 };
 
 export default topImage;
