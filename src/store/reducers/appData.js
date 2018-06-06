@@ -46,7 +46,8 @@ const initialState = {
         },
         topImage: {
           topImageUrl: '/images/top-header.jpg',
-          topImageText: '',
+          topImageTextHeader: 'Russian Orthodox Church Outside Russia',
+          topImageTextSubHeader: 'The Hermitage Of The Holy Protection',
         },
         calendar: {
           date: '',
@@ -108,7 +109,8 @@ const initialState = {
         },
         topImage: {
           topImageUrl: '/images/top-header.jpg',
-          topImageText: '',
+          topImageTextHeader: 'Русская Православная Церковь Заграницей',
+          topImageTextSubHeader: 'Скит Покрова Божией Матери',
         },
         calendar: {
           date: '',
