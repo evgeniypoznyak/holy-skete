@@ -1,8 +1,5 @@
 import React from 'react';
 import classes from './TopImage.scss';
-import TopImage from '../../assets/images/top-header.jpg';
-
-// todo multiple imports. Switch between by props if needed
 
 const topImage = (props) => {
   const headers = {
@@ -14,18 +11,26 @@ const topImage = (props) => {
       ' container-fluid justify-content-center';
   const cssHeader = classes.GeneralText + ' ' + classes.TextHeader;
   const cssSubHeader = classes.GeneralText + ' ' + classes.TextSubHeader;
+  let headerImage = null;
+  if (headers.main) {
+    headerImage = <div className='row'>
+      <div className={cssHeader}>{headers.main}</div>
+    </div>;
+  }
+  let subHeaderImage = null;
+  if (headers.sub) {
+    subHeaderImage = <div className='row'>
+      <div className={cssSubHeader}>{headers.sub}</div>
+    </div>;
+  }
 
   return (
       <div className={classes.TopImage}>
         <div className={cssHolder}>
-          <div className='row'>
-            <div className={cssHeader}>{headers.main}</div>
-          </div>
-          <div className='row'>
-            <div className={cssSubHeader}>{headers.sub}</div>
-          </div>
+          {headerImage}
+          {subHeaderImage}
         </div>
-        <img className={classes.Image} src={TopImage} alt='img'/>
+        <img className={classes.Image} src={props.topImageUrl} alt='img'/>
       </div>
   );
 };

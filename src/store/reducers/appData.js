@@ -14,12 +14,28 @@ const initialState = {
               submit: 'SUBMIT',
             },
           },
-          cemetery: {},
+          cemetery: {
+            topImage: {
+              topImageTextHeader: 'Cemetery',
+              topImageTextSubHeader: null,
+            },
+            mainParagraph: [
+                `Dear Friends!`,
+                `A Russian cemetery is located on the territory of the Hermitage of the Protection of the Mother of God. From the moment of the establishment of our church community 70 years ago, our clergy and the faithful made sure that there would be an Orthodox cemetery near the church. Burials of the reposed have take place at this cemetery since then.`,
+                `Today the graves of Orthodox Russians, Ukrainians, Americans, Serbians and of many others, for whom it was important to be buried in sacred ground, peacefully lie in the shadow of the church domes.`,
+                `The cemetery is in a quiet wooded area and is cared for by the residents of the Hermitage. It is significant that the price of graves is within the ability of people of all means.`,
+                `Please direct all questions to the Rector of the Hermitage, Father Tikhon.`,
+              ],
+          },
           clergy: {},
           contactUs: {},
           directions: {},
           donations: {},
           homePage: {
+            topImage: {
+              topImageTextHeader: 'Russian Orthodox Church Outside Russia',
+              topImageTextSubHeader: 'The Hermitage Of The Holy Protection',
+            },
             mainParagraph: [
               `The vigil lamp of church life in our Hermitage of the Holy Protection of the Mother of God was lit in 1953, when in the Southern New Jersey village of Buena Vista a church community was established, consisting primarily of Russian Cossacks who could not conceive of life and activities without their Orthodox traditions, divine services and missionary outreach.`,
               `The community set out to build a small church in the style of Russian Church architecture with a full-fledged parish and liturgical life, to establish a church school and apportion land for a cemetery where any Orthodox Christian could find a place for his eternal rest in the shadow of the church domes.`,
@@ -43,11 +59,6 @@ const initialState = {
         switchLanguage: {
           switchLanguageRussian: 'Russian',
           switchLanguageEnglish: 'English',
-        },
-        topImage: {
-          topImageUrl: '/images/top-header.jpg',
-          topImageTextHeader: 'Russian Orthodox Church Outside Russia',
-          topImageTextSubHeader: 'The Hermitage Of The Holy Protection',
         },
         calendar: {
           date: '',
@@ -77,12 +88,28 @@ const initialState = {
               submit: 'ОТПРАВИТЬ',
             },
           },
-          cemetery: {},
+          cemetery: {
+            topImage: {
+              topImageTextHeader: 'Кладбище',
+              topImageTextSubHeader: null,
+            },
+            mainParagraph: [
+              `Дорогие друзья!`,
+              `На территории Покровского Скита действует Русское кладбище. С момента основания нашей церковной общины 70 лет назад, духовенство и верующие позаботились о том, что бы при храме находилось православное кладбище. С тех пор начались первые захоронения.`,
+              `И потому теперь, в тени церковных куполов, покоятся в мире православные русские, американцы , украинцы, сербы и многие другие, все те, для кого было не безразлично где найти своё вечное упокоение.`,
+              `Кладбище располагаться в тихой лесной местности и за ним ухаживают насельники скита, при этом примечательно, что цены у нас остаются приемлемыми для людей разного достатка. `,
+              `Если у вас возникли вопросы, вы всегда можете обратиться к настоятелю.`,
+            ],
+          },
           clergy: {},
           contactUs: {},
           directions: {},
           donations: {},
           homePage: {
+            topImage: {
+              topImageTextHeader: 'Русская Православная Церковь Заграницей',
+              topImageTextSubHeader: 'Скит Покрова Божией Матери',
+            },
             mainParagraph: [
               `Лампада Церковной жизни в нашем Покровском Скиту затеплилась в далеком 1953 году, когда в Южном Нью-Джерси в местечке Бьюна Виста образовалась церковная община состоящая преимущественно из русских Казаков, которые не воспринимали свою жизнь и деятельность в отрыве от Православной традиции, от богослужебного и миссионерского служения`,
               `Собравшись вместе было принято решение возвести небольшой храм, который мог бы воплотить в себе опыт русского церковного зодчества, начать при нем полноценную приходскую и богослужебную деятельность, открыть церковную школу и выделить при храме место для кладбища, с тем, что бы каждый православный верующий, мог бы найти для себя тихое место вечного покоя в тени церковных куполов.`,
@@ -106,11 +133,6 @@ const initialState = {
         switchLanguage: {
           switchLanguageRussian: 'Русский',
           switchLanguageEnglish: 'Английский',
-        },
-        topImage: {
-          topImageUrl: '/images/top-header.jpg',
-          topImageTextHeader: 'Русская Православная Церковь Заграницей',
-          topImageTextSubHeader: 'Скит Покрова Божией Матери',
         },
         calendar: {
           date: '',

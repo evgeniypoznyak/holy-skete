@@ -5,7 +5,7 @@ import classes from './Carousel.scss';
 class Carousel extends Component {
 
     state = {
-        activeImageIndex: 0,
+        activeImageIndex: this.props.images.length -1,
     }
     intervalId = null;
 

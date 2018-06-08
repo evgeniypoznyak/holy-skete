@@ -23,15 +23,20 @@
 
 
   .TextHeader {
+    position: relative;
     font-size: 2rem;
+    animation-name: fromUpToCenter;
+    animation-duration: 1.8s;
   }
 
   .TextSubHeader {
+    position: relative;
     font-size: 1.5rem;
+    animation-name: fromBottomToCenter;
+    animation-duration: 2s;
   }
 
 }
-
 
 @media screen and (max-width: 650px) {
 
@@ -48,7 +53,17 @@
     .TextSubHeader {
       font-size: 0.9rem;
     }
+
   }
 
+}
 
+
+@keyframes fromUpToCenter {
+  0%   {top: -100rem}
+  100% {top: 0rem}
+}
+@keyframes fromBottomToCenter {
+  0%   {left: -100rem}
+  100% {left: 0rem}
 }
