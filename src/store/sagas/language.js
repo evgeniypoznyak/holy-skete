@@ -1,12 +1,12 @@
 import {put} from 'redux-saga/effects';
-import {delay} from 'redux-saga';
+// import {delay} from 'redux-saga';
 import * as actions from '../actions';
 import * as helpers from '../../shared/utility';
 
 export function* onSetupTemporarySpinnerForAllAppSaga(action) {
-  yield put(actions.onShowHideSpinner(true));
-  yield delay(0);
-  yield put(actions.onShowHideSpinner(false));
+ // yield put(actions.onShowHideSpinner(true));
+ // yield delay(0);
+ // yield put(actions.onShowHideSpinner(false));
   yield put(actions.onChangeLanguageAction(action.language));
 }
 

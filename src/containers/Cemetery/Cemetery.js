@@ -6,15 +6,14 @@ import TopImageUrl from '../../assets/images/cemetery/top-image/cemetery.jpg';
 import MainContent from '../../components/MainContent/MainContent';
 import Carousel from '../../components/Carousel/Carousel';
 import image1 from '../../assets/images/cemetery/carousel/001.jpg';
+import Banner from '../../components/Banner/Banner';
 
 class Cemetery extends Component {
 
   render() {
-
     const sliderImages = [
       image1,
     ];
-    console.log(this.props);
 
     return (
         <div className={classes.Cemetery}>
@@ -40,6 +39,13 @@ class Cemetery extends Component {
 
               </div>
             </div>
+
+            <div className="row">
+              <Banner
+                  imageUrl={image1}
+              >TEST</Banner>
+            </div>
+
           </div>
 
 

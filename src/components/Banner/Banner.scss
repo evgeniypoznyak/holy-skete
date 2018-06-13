@@ -1,0 +1,64 @@
+.Banner {
+  position: relative;
+  height: 100%;
+
+
+
+  .TextHolder {
+    position: absolute;
+    top: 40%;
+  }
+
+  .GeneralText {
+    margin: auto;
+    background-color: rgba(91, 90, 90, 0.7019607843137254);
+    border-radius: 1rem;
+    padding: 1rem;
+    color: white;
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, .5);
+  }
+
+  .TextHeader {
+    position: relative;
+    font-size: 2rem;
+    animation-name: fromUpToCenter;
+    animation-duration: 1.8s;
+  }
+
+}
+
+.Image {
+  width: 100%;
+  height: auto;
+}
+
+
+@media screen and (max-width: 650px) {
+
+  .Banner {
+
+    .GeneralText{
+      border-radius: 0.4rem;
+      padding: 0.4rem;
+    }
+
+    .TextHeader {
+      font-size: 1.1rem;
+    }
+    .TextSubHeader {
+      font-size: 0.9rem;
+    }
+
+  }
+
+}
+
+
+@keyframes fromUpToCenter {
+  0%   {top: -100rem}
+  100% {top: 0rem}
+}
+@keyframes fromBottomToCenter {
+  0%   {left: -100rem}
+  100% {left: 0rem}
+}
