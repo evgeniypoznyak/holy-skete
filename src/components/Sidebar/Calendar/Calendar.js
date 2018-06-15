@@ -16,7 +16,7 @@ class Calendar extends Component {
       ) {
         holiday = this.props.calendar.holidays[0];
         image = <a href={holiday.url} target='_blank'>
-          <img title={holiday.name}
+          <img className={"shadow " + classes.CalendarImage} title={holiday.name}
                src={holiday.img} alt={'img'}/>
         </a>;
       } else if (this.props.calendar.saints &&
@@ -25,7 +25,7 @@ class Calendar extends Component {
       ) {
         saint = this.props.calendar.saints[0];
         image = <a href={saint.url} target='_blank'>
-          <img title={saint.name}
+          <img className={"shadow " + classes.CalendarImage} title={saint.name}
                src={saint.img} alt={'img'}/>
         </a>;
       }
