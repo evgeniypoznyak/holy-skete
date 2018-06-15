@@ -4,18 +4,19 @@ import classes from './Banner.scss';
 const banner = (props) => {
 
 
-  const cssHolder = classes.TextHolder +
-      ' container-fluid justify-content-center';
+  const divStyle = {
+    backgroundImage: `url("${props.imageUrl}")`,
+  };
 
   return (
 
       <div className={classes.Banner}>
-        <div className={cssHolder}>
-          <div className={classes.GeneralText}>
+          <div
+              style={divStyle}
+              className={classes.TextWrapper}
+          >
             {props.children}
           </div>
-        </div>
-        <img className={classes.Image} src={props.imageUrl} alt='img'/>
       </div>
   )
 };

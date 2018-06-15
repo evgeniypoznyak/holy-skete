@@ -18,11 +18,11 @@ const news = (props) => {
                 <img className="card-img-top" src={newsItem.enclosure.link}
                      alt=""/>
               </a>
-              <div className="card-body">
-                <h5 className="card-title">{newsItem.title}</h5>
+              <div className="card-body shadow">
+                <h5 className="card-title clearText">{newsItem.title}</h5>
                 <p className="card-text">{newsItem.content}</p>
                 <a href={newsItem.link} target={'_blank'}
-                   className="btn btn-outline-primary">{props.news.text.readMore}</a>
+                   className="btn btn-outline-light">{props.news.text.readMore}</a>
               </div>
             </div>
           </div>

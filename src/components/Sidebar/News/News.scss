@@ -5,6 +5,10 @@
 :global {
   .card {
     background-color: gray;
-    margin-top: 1rem;
+    margin-top: 2rem;
+  }
+  .card-body {
+    background-color: #777777ba;
+    color: white;
   }
 }

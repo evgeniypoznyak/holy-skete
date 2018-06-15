@@ -7,6 +7,12 @@ import MainContent from '../../components/MainContent/MainContent';
 import Carousel from '../../components/Carousel/Carousel';
 import image1 from '../../assets/images/cemetery/carousel/001.jpg';
 import Banner from '../../components/Banner/Banner';
+import bannerImage1 from '../../assets/images/cemetery/cemetery.jpg';
+import bannerImage2 from '../../assets/images/cemetery/directionsBanner.jpg';
+import quoteImageRussian
+  from '../../assets/images/cemetery/qoute-saints/simeon-novui-bogoslov.jpg';
+import quoteImageEnglish
+  from '../../assets/images/cemetery/qoute-saints/antoniy-velikiy.jpeg';
 
 class Cemetery extends Component {
 
@@ -14,6 +20,11 @@ class Cemetery extends Component {
     const sliderImages = [
       image1,
     ];
+
+    let quoteSaintSmallImageURL = quoteImageEnglish;
+    if (this.props.language === 'russian') {
+      quoteSaintSmallImageURL = quoteImageRussian;
+    }
 
     return (
         <div className={classes.Cemetery}>
@@ -40,15 +51,40 @@ class Cemetery extends Component {
               </div>
             </div>
 
-            <div className="row">
-              <Banner
-                  imageUrl={image1}
-              >TEST</Banner>
-            </div>
 
           </div>
 
+          <Banner imageUrl={bannerImage1}>
+            <div className="text-center">
+              <img
+                  src={quoteSaintSmallImageURL}
+                  className={'rounded ' + classes.QuoteSaintSmallImage}
+                  alt={'img'}/>
+            </div>
+            <div>
+              <div className={classes.CemeteryBannerQuote}>
+                {this.props.content.firstBannerCemetery.firstBannerCemeteryText}
+              </div>
+              <div
+                  className={'text-right ' + classes.CemeteryBannerQuoteAuthor}>
+                {this.props.content.firstBannerCemetery.firstBannerCemeteryTextAuthor}
+              </div>
+            </div>
+          </Banner>
 
+          <div className={classes.HorizontalLine}></div>
+
+          <Banner imageUrl={bannerImage2}>
+            <div className="text-center">
+              <button
+                  className='btn btn-success btn-lg'
+                  onClick={() => {
+                    this.props.history.push('/directions');
+                  }}>
+                {this.props.content.secondBannerCemetery.secondBannerCemeteryButtonText}
+              </button>
+            </div>
+          </Banner>
 
         </div>
     );
@@ -59,6 +95,7 @@ class Cemetery extends Component {
 
 const mapStateToProps = state => {
   return {
+    language: state.language.languageSelected,
     content: state.appData.data[state.language.languageSelected].languageData.pages.cemetery,
     russian: state.appData.data.russian,
     english: state.appData.data.english,
