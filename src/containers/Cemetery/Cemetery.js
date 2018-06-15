@@ -5,7 +5,6 @@ import {connect} from 'react-redux';
 import TopImageUrl from '../../assets/images/cemetery/top-image/cemetery.jpg';
 import MainContent from '../../components/MainContent/MainContent';
 import Carousel from '../../components/Carousel/Carousel';
-import image1 from '../../assets/images/cemetery/carousel/001.jpg';
 import Banner from '../../components/Banner/Banner';
 import bannerImage1 from '../../assets/images/cemetery/cemetery.jpg';
 import bannerImage2 from '../../assets/images/cemetery/directionsBanner.jpg';
@@ -14,11 +13,22 @@ import quoteImageRussian
 import quoteImageEnglish
   from '../../assets/images/cemetery/qoute-saints/antoniy-velikiy.jpeg';
 
+import image1 from '../../assets/images/cemetery/carousel/010.jpg';
+import image2 from '../../assets/images/cemetery/carousel/020.jpg';
+import image3 from '../../assets/images/cemetery/carousel/030.jpg';
+import image4 from '../../assets/images/cemetery/carousel/040.jpg';
+import image5 from '../../assets/images/cemetery/carousel/050.jpg';
+import image6 from '../../assets/images/cemetery/carousel/060.jpg';
+import image7 from '../../assets/images/cemetery/carousel/070.jpg';
+import image8 from '../../assets/images/cemetery/carousel/080.jpg';
+import image9 from '../../assets/images/cemetery/carousel/090.jpg';
+
+
 class Cemetery extends Component {
 
   render() {
     const sliderImages = [
-      image1,
+     image2, image3, image4, image5,image6, image7, image8, image9, image1
     ];
 
     let quoteSaintSmallImageURL = quoteImageEnglish;
