@@ -15,20 +15,24 @@ import quoteImageEnglish
 
 import image1 from '../../assets/images/cemetery/carousel/010.jpg';
 import image2 from '../../assets/images/cemetery/carousel/020.jpg';
-import image3 from '../../assets/images/cemetery/carousel/030.jpg';
-import image4 from '../../assets/images/cemetery/carousel/040.jpg';
-import image5 from '../../assets/images/cemetery/carousel/050.jpg';
-import image6 from '../../assets/images/cemetery/carousel/060.jpg';
-import image7 from '../../assets/images/cemetery/carousel/070.jpg';
-import image8 from '../../assets/images/cemetery/carousel/080.jpg';
+
+// import image3 from '../../assets/images/cemetery/carousel/030.jpg';
+// import image4 from '../../assets/images/cemetery/carousel/040.jpg';
+// import image5 from '../../assets/images/cemetery/carousel/050.jpg';
+// import image6 from '../../assets/images/cemetery/carousel/060.jpg';
+// import image7 from '../../assets/images/cemetery/carousel/070.jpg';
+// import image8 from '../../assets/images/cemetery/carousel/080.jpg';
+
 import image9 from '../../assets/images/cemetery/carousel/090.jpg';
 
 
 class Cemetery extends Component {
 
   render() {
+   const httpImages = this.props.content.cemeterySlider1;
     const sliderImages = [
-     image2, image3, image4, image5,image6, image7, image8, image9, image1
+     image2, httpImages[0], httpImages[1],httpImages[2],httpImages[3],
+      image9, image1
     ];
 
     let quoteSaintSmallImageURL = quoteImageEnglish;
@@ -41,7 +45,6 @@ class Cemetery extends Component {
           <TopImage
               topImageUrl={TopImageUrl}
               topImageData={this.props.content.topImage}/>
-
           <div className="container-fluid">
             <div className="row">
               <div className="sm-1 col-md-8">
