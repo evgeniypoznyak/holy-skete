@@ -1,63 +1,65 @@
 import React, {Component} from 'react';
 import classes from './Carousel.scss';
 
-
 class Carousel extends Component {
 
-    state = {
-        activeImageIndex: this.props.images.length -1,
+  state = {
+    activeImageIndex: this.props.images.length - 1,
+  };
+  intervalId = null;
+
+  componentDidMount = () => {
+    this.intervalId = setInterval(this.changeState,
+        (this.props.animationDuration));
+  };
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
+
+  changeState = () => {
+    let index = this.state.activeImageIndex;
+    const imagesLength = this.props.images.length;
+    if (index + 1 < imagesLength) {
+      index++;
     }
-    intervalId = null;
-
-    componentDidMount = () => {
-        this.intervalId = setInterval(this.changeState, (this.props.animationDuration));
+    else {
+      index = 0;
     }
+    this.setState({activeImageIndex: index});
+  };
 
-    componentWillUnmount() {
-        clearInterval(this.intervalId)
-    }
+  render() {
+    let index = 0;
+    let images = this.props.images.map((img) => {
+      let imageClasses = classes.Images;
+      if (this.state.activeImageIndex === index) {
+        imageClasses = imageClasses + ' ' + classes.ActiveImage;
+      }
+      index++;
 
-    changeState = () => {
-        let index = this.state.activeImageIndex;
-        const imagesLength = this.props.images.length;
-        if (index + 1 < imagesLength) {
-            index++;
-        }
-        else {
-            index = 0;
-        }
-        this.setState({activeImageIndex: index});
-    }
+      return <img
+          style={{animationDuration: (this.props.animationDuration + 'ms')}}
+          className={imageClasses} key={index} src={img} alt='img'
+      />;
 
+    });
 
-    render() {
-        let index = 0;
-        let images = this.props.images.map((img) => {
-            let imageClasses = classes.Images;
-            if (this.state.activeImageIndex === index) {
-                imageClasses = imageClasses + ' ' + classes.ActiveImage;
-            }
-            index++;
+    return (
+        <div className={classes.Carousel}>
 
-            return <img
-                style={{animationDuration: (this.props.animationDuration + 'ms')}}
-                className={imageClasses} key={index} src={img} alt='img'
-            />
-        })
+          <div className={classes.ImageWrapper}
+               style={{width: (this.props.width + '%')}}>
+            <img className={classes.StartImage} src={this.props.images[0]}
+                 alt='img'/>
+            {images}
+          </div>
 
-        return (
-            <div className={classes.Carousel}>
+        </div>
+    );
 
-                <div className={classes.ImageWrapper} style={{width: (this.props.width + '%')}}>
-                    <img className={classes.StartImage} src={this.props.images[0]} alt='img'/>
-                    {images}
-                </div>
-
-            </div>
-        )
-
-    }
+  }
 
 }
 
-export default Carousel
+export default Carousel;

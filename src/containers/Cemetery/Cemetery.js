@@ -14,26 +14,15 @@ import quoteImageEnglish
   from '../../assets/images/cemetery/qoute-saints/antoniy-velikiy.jpeg';
 
 import image1 from '../../assets/images/cemetery/carousel/010.jpg';
-import image2 from '../../assets/images/cemetery/carousel/020.jpg';
-
-// import image3 from '../../assets/images/cemetery/carousel/030.jpg';
-// import image4 from '../../assets/images/cemetery/carousel/040.jpg';
-// import image5 from '../../assets/images/cemetery/carousel/050.jpg';
-// import image6 from '../../assets/images/cemetery/carousel/060.jpg';
-// import image7 from '../../assets/images/cemetery/carousel/070.jpg';
-// import image8 from '../../assets/images/cemetery/carousel/080.jpg';
-
-import image9 from '../../assets/images/cemetery/carousel/090.jpg';
 
 
 class Cemetery extends Component {
 
   render() {
    const httpImages = this.props.content.cemeterySlider1;
-    const sliderImages = [
-     image2, httpImages[0], httpImages[1],httpImages[2],httpImages[3],
-      image9, image1
-    ];
+    const sliderImages = [];
+    sliderImages[0] = image1;
+    sliderImages.push(...httpImages);
 
     let quoteSaintSmallImageURL = quoteImageEnglish;
     if (this.props.language === 'russian') {

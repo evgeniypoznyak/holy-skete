@@ -28,12 +28,14 @@ const initialState = {
             ],
 
             cemeterySlider1: [
+              'images/cemetery/slider1/020.jpg',
               'images/cemetery/slider1/030.jpg',
               'images/cemetery/slider1/040.jpg',
               'images/cemetery/slider1/050.jpg',
               'images/cemetery/slider1/060.jpg',
               'images/cemetery/slider1/070.jpg',
               'images/cemetery/slider1/080.jpg',
+              'images/cemetery/slider1/090.jpg',
             ],
             firstBannerCemetery: {
               firstBannerCemeteryText: '“If we make every effort to avoid death of the body, still more should it be our endeavor to avoid death of the soul. There is no obstacle for a man who wants to be saved other than negligence and laziness of soul.”',
@@ -141,12 +143,14 @@ const initialState = {
               `Если у вас возникли вопросы, вы всегда можете обратиться к настоятелю.`,
             ],
             cemeterySlider1: [
+              'images/cemetery/slider1/020.jpg',
               'images/cemetery/slider1/030.jpg',
               'images/cemetery/slider1/040.jpg',
               'images/cemetery/slider1/050.jpg',
               'images/cemetery/slider1/060.jpg',
               'images/cemetery/slider1/070.jpg',
               'images/cemetery/slider1/080.jpg',
+              'images/cemetery/slider1/090.jpg',
             ],
             firstBannerCemetery: {
               firstBannerCemeteryText: '“Начало жизни у меня есть конец, и конец – начало. Я не знаю, откуда прихожу, не знаю, где нахожусь, и не ведаю, жалкий, куда опять пойду. Я рождаюсь как земля от земли и как тело от тела, будучи, конечно, от тленного тленным и смертным. Малое время я провожу на земле, живя во плоти, и умираю и, переходя из этой жизни, начинаю жить другой. Я оставляю в земле тело, которое потом воскреснет и будет жить бесконечной жизнью вовеки.”',
