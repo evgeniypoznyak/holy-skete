@@ -33,6 +33,10 @@ const asyncContactUs = AsyncComponent(() => {
 const asyncDonations = AsyncComponent(() => {
   return import('./containers/Donations/Donations');
 });
+const asyncFrAnatoly = AsyncComponent(() => {
+  return import('./containers/ContactUs/FrAnatoly/FrAnatoly');
+  // src/containers/ContactUs/FrAnatoly
+});
 
 class App extends Component {
 
@@ -56,6 +60,7 @@ class App extends Component {
           <Route path={'/clergy'} component={asyncClergy}/>
           <Route path={'/directions'} component={asyncDirections}/>
           <Route path={'/contact-us'} component={asyncContactUs}/>
+          <Route path={'/contact-fr-anatoly'} component={asyncFrAnatoly}/>
           <Route path={'/donations'} component={asyncDonations}/>
           <Route path={'/'} exact component={HomePage}/>
           <Redirect to={'/'}/>

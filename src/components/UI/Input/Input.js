@@ -5,9 +5,10 @@ import classes from './Input.scss';
 const input = (props) => {
   let inputElement = null;
   const inputClasses = [classes.InputElement];
+  inputClasses.push('form-control')
 
   if (props.invalid && props.shouldValidate && props.touched) {
-    inputClasses.push(classes.Invalid);
+    inputClasses.push('is-invalid');
   }
 
   switch (props.elementType) {

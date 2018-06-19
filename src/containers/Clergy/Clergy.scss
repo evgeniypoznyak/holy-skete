@@ -1,3 +1,20 @@
 .Clergy {
+  margin-top: 10rem;
+}
+
+.ClergyDescription {
+
+}
+
+.ClergyRow {
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 575px) {
+
+  .ClergyDescription {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
 
 }

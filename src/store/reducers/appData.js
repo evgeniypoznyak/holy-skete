@@ -72,7 +72,22 @@ const initialState = {
           },
           contactUs: {},
           directions: {},
-          donations: {},
+          donations: {
+            donationType1: {
+              donationTitle: 'Send Check Via Mail',
+              donationParagraph1: {
+                donationParagraphTitle: 'We will be thankful for any donations made via check. Checks can be mailed to',
+                donationParagraphText: 'Hermitage Of The Holy Protection, 333 Weymouth Road, Buena, NJ 08310'
+              },
+              donationParagraph2: {
+                donationParagraphTitle: 'Please write checks out to',
+                donationParagraphText: 'Sviato Pokrovsky Russ Church'
+              }
+            },
+            donationType2: {
+              donationTitle: 'Make A Donation',
+            }
+          },
           homePage: {
             topImage: {
               topImageTextHeader: 'Russian Orthodox Church Outside Russia',
@@ -187,7 +202,22 @@ const initialState = {
           },
           contactUs: {},
           directions: {},
-          donations: {},
+          donations: {
+            donationType1: {
+              donationTitle: 'Выписать денежный чек',
+              donationParagraph1: {
+                donationParagraphTitle: 'Мы будем рады, если вы пришлете пожертвование в ввиде чека на наш адрес',
+                donationParagraphText: 'Hermitage Of The Holy Protection, 333 Weymouth Road, Buena, NJ 08310'
+              },
+              donationParagraph2: {
+                donationParagraphTitle: 'Чек должен быть выписан на имя',
+                donationParagraphText: 'Sviato Pokrovsky Russ Church'
+              }
+            },
+            donationType2: {
+              donationTitle: 'Cовершить пожертвование прямо сейчас',
+            }
+          },
           homePage: {
             topImage: {
               topImageTextHeader: 'Русская Православная Церковь Заграницей',

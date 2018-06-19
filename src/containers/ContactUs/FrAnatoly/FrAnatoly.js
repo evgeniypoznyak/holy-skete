@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
+import classes from './FrAnatoly.scss';
+import {checkValidity, updateObject} from '../../../shared/utility';
 import {Redirect} from 'react-router-dom';
-import classes from './ContactUs.scss';
-import Spinner from '../../components/UI/Spinner/Spinner';
-import Input from '../../components/UI/Input/Input';
-import {checkValidity, updateObject} from '../../shared/utility';
+import Spinner from '../../../components/UI/Spinner/Spinner';
+import Input from '../../../components/UI/Input/Input';
 
-class ContactUs extends Component {
+class FrAnatoly extends Component {
 
   state = {
     contactForm: {
@@ -129,12 +129,14 @@ class ContactUs extends Component {
       animateClass = classes.bounceIn;
     }
 
+
     return (
         <div className={classes.ContactUs}>
           <div className="container-fluid">
             <div className="row justify-content-center">
               <div className="col-sm-12 col-md-6">
-                <div className="h1 text-center ">Contact Us</div>
+
+                <div className="h1 text-center">Contact Us</div>
 
                 <form onSubmit={this.submitHandler}>
                   {authRedirect}
@@ -162,6 +164,7 @@ class ContactUs extends Component {
 
   }
 
+
 }
 
-export default ContactUs;
+export default FrAnatoly;

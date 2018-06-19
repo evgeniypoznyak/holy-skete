@@ -11,7 +11,8 @@ import languageReducer from './store/reducers/language';
 import appDataReducer from './store/reducers/appData';
 import createSagaMiddleware from 'redux-saga';
 import {watchAuth, watchLanguage, watchCalendar, watchNews} from './store/sagas';
-import './bootstrap.scss';
+import './assets/styles/bootstrap.scss';
+import './assets/styles/animate.scss';
 
 
 let composeEnhancers = compose;
