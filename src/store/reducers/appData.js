@@ -42,7 +42,7 @@ const initialState = {
               firstBannerCemeteryTextAuthor: '+ St. Anthony the Great',
             },
             secondBannerCemetery: {
-              secondBannerCemeteryButtonText: 'Get Directions',
+              secondBannerCemeteryButtonText: 'Directions',
             },
           },
           clergy: {
@@ -71,7 +71,10 @@ const initialState = {
             },
           },
           contactUs: {},
-          directions: {},
+          directions: {
+            url: 'http://maps.google.com/?q=333+Weymouth+Rd,+Buena,+NJ+08310,+United+States',
+            directionsButtonText: 'GET DIRECTIONS'
+          },
           donations: {
             donationType1: {
               donationTitle: 'Send Check Via Mail',
@@ -172,7 +175,7 @@ const initialState = {
               firstBannerCemeteryTextAuthor: '+ Преподобный Симеон Новый Богослов',
             },
             secondBannerCemetery: {
-              secondBannerCemeteryButtonText: 'Как доехать?',
+              secondBannerCemeteryButtonText: 'Наш Адрес',
             },
           },
           clergy: {
@@ -201,7 +204,10 @@ const initialState = {
             },
           },
           contactUs: {},
-          directions: {},
+          directions: {
+            url: 'http://maps.google.com/?q=333+Weymouth+Rd,+Buena,+NJ+08310,+United+States',
+            directionsButtonText: 'Открыть карту'
+          },
           donations: {
             donationType1: {
               donationTitle: 'Выписать денежный чек',

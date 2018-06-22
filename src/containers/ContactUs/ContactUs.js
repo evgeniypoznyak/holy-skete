@@ -55,12 +55,15 @@ class ContactUs extends Component {
 
   submitHandler = (event) => {
     event.preventDefault();
+    if (this.state.formIsValid) {
+      const formData = {};
+      for (let formElementIdentifier in this.state.contactForm) {
+        formData[formElementIdentifier] = this.state.contactForm[formElementIdentifier].value;
+      }
 
-    const formData = {};
-    for (let formElementIdentifier in this.state.contactForm) {
-      formData[formElementIdentifier] = this.state.contactForm[formElementIdentifier].value;
+      console.log(formData);
     }
-    console.log(formData);
+
   };
 
   inputChangedHandler = (event, inputIdentifier) => {
