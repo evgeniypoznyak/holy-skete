@@ -97,33 +97,6 @@ class ContactUs extends Component {
 
   render() {
 
-    let emailRecipientChoice = null;
-
-    switch (this.props.emailRecipient) {
-      case 'father Anatoly':
-        emailRecipientChoice = <div
-            className={'alert-info ' + classes.MessageGoesToInfo}
-        >
-          {this.props.content.emailGoesToText}
-          <div>
-            {this.props.content.frAnatolyName}
-          </div>
-        </div>;
-        break;
-      case 'father Tikhon':
-        emailRecipientChoice = <div
-            className={'alert-info ' + classes.MessageGoesToInfo}
-        >
-          {this.props.content.emailGoesToText}
-          <div>
-            {this.props.content.frTikhonName}
-          </div>
-        </div>;
-        break;
-      default:
-
-    }
-
     let frAnatolyCssClass = null;
     let frTikhonCssClass = null;
 
@@ -189,7 +162,6 @@ class ContactUs extends Component {
             <div className="row justify-content-center">
               <div className="col-sm-12 col-md-6">
 
-
                 <div className={classes.ChangeRecipientBlock}>
                   <div className="h6">
                     {this.props.content.changeEmailRecipientText}
@@ -223,9 +195,6 @@ class ContactUs extends Component {
                   {authRedirect}
                   {errorMessage}
                   {form}
-                  {/*<div className="form-group">*/}
-                    {/*{emailRecipientChoice}*/}
-                  {/*</div>*/}
                   <div className='form-group'>
                     <button
                         className={'btn btn-lg btn-block btn-primary form-control '
@@ -240,9 +209,7 @@ class ContactUs extends Component {
 
             </div>
 
-
           </div>
-
 
         </div>
     );
