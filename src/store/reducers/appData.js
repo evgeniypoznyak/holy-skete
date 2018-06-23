@@ -70,7 +70,22 @@ const initialState = {
               clergyPriest2EmailButtonText: 'Write a email',
             },
           },
-          contactUs: {},
+          contactUs: {
+            contactUsFormData: {
+              contactUsFormHeader: 'Contact Us',
+              contactUsFormButton: 'Send',
+              contactUsFormInputMessage: 'Include your message here...',
+              contactUsFormInputName: 'Your Name',
+              contactUsFormInputEmail: 'Your E-Mail'
+            },
+            emailGoesToText: 'You message goes to:',
+            changeEmailRecipientText: 'Change Email Recipient',
+            emailGoesToAction: 'send to',
+            frTikhonName: 'father Tikhon',
+            frAnatolyName: 'father Anatoly',
+            frTikhonNameChangeButton: 'father Tikhon',
+            frAnatolyNameChangeButton: 'father Anatoly'
+          },
           directions: {
             url: 'http://maps.google.com/?q=333+Weymouth+Rd,+Buena,+NJ+08310,+United+States',
             directionsButtonText: 'GET DIRECTIONS'
@@ -203,7 +218,22 @@ const initialState = {
               clergyPriest2EmailButtonText: 'Написать на электронную почту',
             },
           },
-          contactUs: {},
+          contactUs: {
+            contactUsFormData: {
+              contactUsFormHeader: 'Написать нам',
+              contactUsFormButton: 'Отправить',
+              contactUsFormInputMessage: 'Укажите здесь ваше сообщение здесь',
+              contactUsFormInputName: 'Ваше имя',
+              contactUsFormInputEmail: 'Ваш емейл'
+            },
+            emailGoesToText: 'Ваше сообщение будет отправлено:',
+            changeEmailRecipientText: 'Изменить получателя письма',
+            emailGoesToAction: 'отправить',
+            frTikhonName: 'отцу Тихону',
+            frAnatolyName: 'отцу Анатолию',
+            frTikhonNameChangeButton: 'отец Тихон',
+            frAnatolyNameChangeButton: 'отец Анатолий'
+          },
           directions: {
             url: 'http://maps.google.com/?q=333+Weymouth+Rd,+Buena,+NJ+08310,+United+States',
             directionsButtonText: 'Открыть карту'

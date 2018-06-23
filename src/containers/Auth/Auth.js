@@ -63,10 +63,6 @@ class Auth extends Component {
         this.state.controls.password.value, this.state.isSignup);
   };
 
-  // onChangeLanguage = (language) => {
-  //   this.props.onChangeLanguageStart(language);
-  // };
-
   render() {
 
     const formElementsArray = [];
@@ -115,9 +111,6 @@ class Auth extends Component {
             <button>{this.props.content.placeholders.submit}</button>
           </form>
           <div>
-            {/*<button onClick={() => this.onChangeLanguage('russian')}>Change*/}
-              {/*language*/}
-            {/*</button>*/}
             <h1>{this.props.content.name}</h1>
           </div>
         </div>
@@ -142,8 +135,6 @@ const mapDispatchToProps = dispatch => {
   return {
     onAuth: (email, password, isSignup) => dispatch(
         actions.auth(email, password, isSignup)),
-    // onChangeLanguageStart: (language) => dispatch(
-    //     actions.onChangeLanguageStartAction(language)),
   };
 };
 

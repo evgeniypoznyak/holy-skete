@@ -6,6 +6,7 @@ export const onInitCalendar = () => {
     type: actionTypes.INIT_CALENDAR,
   }
 }
+
 export const onInitNews = () => {
   return {
     type: actionTypes.INIT_NEWS,

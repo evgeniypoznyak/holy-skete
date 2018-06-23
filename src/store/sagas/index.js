@@ -12,6 +12,8 @@ import {
 } from './language';
 import {onInitNewsSaga} from './news';
 import {onInitCalendarSaga} from './calendar';
+import {onInitEmailProcessSaga} from './emailSaga';
+
 
 export function* watchAuth() {
   yield takeEvery(actionTypes.AUTH_USER,
@@ -36,3 +38,8 @@ export function* watchCalendar() {
 export function* watchNews() {
   yield takeEvery(actionTypes.INIT_NEWS, onInitNewsSaga);
 }
+
+export function* watchEmail() {
+  yield takeEvery(actionTypes.EMAIL_PROCESS_START, onInitEmailProcessSaga);
+}
+

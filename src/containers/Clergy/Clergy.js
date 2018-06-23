@@ -5,8 +5,14 @@ import {connect} from 'react-redux';
 import hierarchUrl from '../../assets/images/clergy/hierarch.jpg';
 import frTikhonUrl from '../../assets/images/clergy/fr_tikhon.jpg';
 import frAnatoliyUrl from '../../assets/images/clergy/fr_anatoliy.jpg';
+import * as actions from '../../store/actions';
 
 class Clergy extends Component {
+
+  emailButtonHandler(emailRecipient) {
+    this.props.onContactUsRecipientChange(emailRecipient);
+    this.props.history.push('/contact-us');
+  }
 
   render() {
 
@@ -78,7 +84,7 @@ class Clergy extends Component {
                         <button
                             className="btn btn-outline-success btn-lg"
                             onClick={() => {
-                              this.props.history.push('/contact-us');
+                              this.emailButtonHandler('father Tikhon');
                             }}
                         >{frTikhon.buttonText}</button>
                       </div>
@@ -113,7 +119,7 @@ class Clergy extends Component {
                         <button
                             className="btn btn-outline-success btn-lg"
                             onClick={() => {
-                              this.props.history.push('/contact-fr-anatoly');
+                              this.emailButtonHandler('father Anatoly');
                             }}
                         >{frAnatoliy.buttonText}</button>
                       </div>
@@ -143,7 +149,10 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    onContactUsRecipientChange: (recipient) => dispatch(
+        actions.onEmailRecipientChangeStart(recipient)),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Clergy);

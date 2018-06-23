@@ -9,8 +9,9 @@ import registerServiceWorker from './registerServiceWorker';
 import authReducer from './store/reducers/auth';
 import languageReducer from './store/reducers/language';
 import appDataReducer from './store/reducers/appData';
+import emailReducer from './store/reducers/emailReducer';
 import createSagaMiddleware from 'redux-saga';
-import {watchAuth, watchLanguage, watchCalendar, watchNews} from './store/sagas';
+import {watchAuth, watchLanguage, watchCalendar, watchNews, watchEmail} from './store/sagas';
 import './assets/styles/bootstrap.scss';
 import './assets/styles/animate.scss';
 
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   auth: authReducer,
   appData: appDataReducer,
   language: languageReducer,
+  email: emailReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -37,6 +39,7 @@ sagaMiddleware.run(watchLanguage);
 sagaMiddleware.run(watchAuth);
 sagaMiddleware.run(watchCalendar);
 sagaMiddleware.run(watchNews);
+sagaMiddleware.run(watchEmail);
 
 const app = (
     <Provider store={store}>

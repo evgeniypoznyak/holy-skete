@@ -5,19 +5,9 @@ import {stripHtmlTags} from '../../shared/utility';
 
 export function* onInitCalendarSaga() {
   const calendar = {};
-
-  // setup calendar
-  // https://azbyka.ru/days/site/api_help
-  // Saints : https://azbyka.ru/days/api/saints.json
-
-  // let testUrl = 'https://azbyka.ru/days/api/connections/2018-04-08/holidays.json';
-  // let dayJson = 'https://azbyka.ru/days/api/day.json';
-  // let dateJson = 'https://azbyka.ru/days/api/day/2018-05-17.json';
-
   const calendarUrl = 'https://azbyka.ru/days/api/day.json';
   let calendarJSON = yield axios.get(calendarUrl);
   let result = renderCalendar(calendarJSON.data);
-  // console.log(result);
   calendar.holidaysEng = result;
   calendar.holidaysRus = result;
   calendar.dateEng = returnDateByLanguage('en');

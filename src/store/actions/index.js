@@ -1,25 +1,30 @@
 export {
-    auth,
-    checkAuthTimeout,
-    authFail,
-    authSuccess,
-    authStart,
-    logout,
-    logoutSucceed,
-    authCheckState,
-    onLoginSuccess,
+  auth,
+  checkAuthTimeout,
+  authFail,
+  authSuccess,
+  authStart,
+  logout,
+  logoutSucceed,
+  authCheckState,
+  onLoginSuccess,
 } from './auth';
 
 export {
-    onChangeLanguageAction,
-    onChangeLanguageStartAction,
-    onShowHideSpinner,
-    initiateBrowserLanguageAction,
-} from './language'
+  onChangeLanguageAction,
+  onChangeLanguageStartAction,
+  onShowHideSpinner,
+  initiateBrowserLanguageAction,
+} from './language';
 
 export {
-    onSetupNewsFeed,
-    onSetupCalendar,
-    onInitNews,
-    onInitCalendar,
-} from './appData'
+  onSetupNewsFeed,
+  onSetupCalendar,
+  onInitNews,
+  onInitCalendar,
+} from './appData';
+
+export {
+  onEmailProcessStart,
+    onEmailRecipientChangeStart
+} from './emailActions';

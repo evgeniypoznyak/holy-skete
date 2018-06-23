@@ -4,6 +4,8 @@ import classes from './ContactUs.scss';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import Input from '../../components/UI/Input/Input';
 import {checkValidity, updateObject} from '../../shared/utility';
+import * as actions from '../../store/actions';
+import {connect} from 'react-redux';
 
 class ContactUs extends Component {
 
@@ -13,7 +15,7 @@ class ContactUs extends Component {
         elementType: 'input',
         elementConfig: {
           type: 'text',
-          placeholder: 'Your Name',
+          placeholder: this.props.content.contactUsFormData.contactUsFormInputName,
         },
         value: '',
         validation: {
@@ -26,7 +28,7 @@ class ContactUs extends Component {
         elementType: 'input',
         elementConfig: {
           type: 'email',
-          placeholder: 'Your E-Mail',
+          placeholder: this.props.content.contactUsFormData.contactUsFormInputEmail,
         },
         value: '',
         validation: {
@@ -40,7 +42,7 @@ class ContactUs extends Component {
         elementType: 'textarea',
         elementConfig: {
           type: 'textarea',
-          placeholder: 'Include your message here...',
+          placeholder: this.props.content.contactUsFormData.contactUsFormInputMessage,
         },
         value: '',
         validation: {
@@ -56,12 +58,15 @@ class ContactUs extends Component {
   submitHandler = (event) => {
     event.preventDefault();
     if (this.state.formIsValid) {
-      const formData = {};
+      const formData = {
+        emailRecipient: this.props.emailRecipient,
+      };
       for (let formElementIdentifier in this.state.contactForm) {
         formData[formElementIdentifier] = this.state.contactForm[formElementIdentifier].value;
       }
-
-      console.log(formData);
+      this.props.onUserContactFormDataReceived(
+          formData,
+      );
     }
 
   };
@@ -86,7 +91,53 @@ class ContactUs extends Component {
     this.setState({contactForm: updatedContactForm, formIsValid: formIsValid});
   };
 
+  emailRecipientButtonHandler(emailRecipient) {
+    this.props.onContactUsRecipientChange(emailRecipient);
+  }
+
   render() {
+
+    let emailRecipientChoice = null;
+
+    switch (this.props.emailRecipient) {
+      case 'father Anatoly':
+        emailRecipientChoice = <div
+            className={'alert-info ' + classes.MessageGoesToInfo}
+        >
+          {this.props.content.emailGoesToText}
+          <div>
+            {this.props.content.frAnatolyName}
+          </div>
+        </div>;
+        break;
+      case 'father Tikhon':
+        emailRecipientChoice = <div
+            className={'alert-info ' + classes.MessageGoesToInfo}
+        >
+          {this.props.content.emailGoesToText}
+          <div>
+            {this.props.content.frTikhonName}
+          </div>
+        </div>;
+        break;
+      default:
+
+    }
+
+    let frAnatolyCssClass = null;
+    let frTikhonCssClass = null;
+
+    switch (this.props.emailRecipient) {
+      case 'father Anatoly':
+        frAnatolyCssClass = 'btn btn-info btn-block';
+        frTikhonCssClass = 'btn btn-outline-info btn-block';
+        break;
+      case 'father Tikhon':
+        frTikhonCssClass = 'btn btn-info btn-block';
+        frAnatolyCssClass = 'btn btn-outline-info btn-block';
+        break;
+      default:
+    }
 
     const formElementsArray = [];
     for (let key in this.state.contactForm) {
@@ -137,17 +188,50 @@ class ContactUs extends Component {
           <div className="container-fluid">
             <div className="row justify-content-center">
               <div className="col-sm-12 col-md-6">
-                <div className="h1 text-center ">Contact Us</div>
+
+
+                <div className={classes.ChangeRecipientBlock}>
+                  <div className="h6">
+                    {this.props.content.changeEmailRecipientText}
+                  </div>
+
+                  <button
+                      className={frTikhonCssClass}
+                      onClick={() => {
+                        this.emailRecipientButtonHandler('father Tikhon');
+                      }}>
+                    {this.props.content.frTikhonNameChangeButton}
+                  </button>
+
+                  <button
+                      className={frAnatolyCssClass}
+                      onClick={() => {
+                        this.emailRecipientButtonHandler('father Anatoly');
+                      }}>
+                    {this.props.content.frAnatolyNameChangeButton}
+                  </button>
+
+                </div>
+
+
+                <div className="h1 text-center ">
+                  {this.props.content.contactUsFormData.contactUsFormHeader}
+                </div>
+                <hr/>
 
                 <form onSubmit={this.submitHandler}>
                   {authRedirect}
                   {errorMessage}
                   {form}
+                  {/*<div className="form-group">*/}
+                    {/*{emailRecipientChoice}*/}
+                  {/*</div>*/}
                   <div className='form-group'>
                     <button
                         className={'btn btn-lg btn-block btn-primary form-control '
                         + animateClass}
-                        disabled={!this.state.formIsValid}>SEND
+                        disabled={!this.state.formIsValid}>
+                      {this.props.content.contactUsFormData.contactUsFormButton}
                     </button>
                   </div>
                 </form>
@@ -167,4 +251,25 @@ class ContactUs extends Component {
 
 }
 
-export default ContactUs;
+const mapStateToProps = state => {
+  // console.log(state);
+  return {
+    emailRecipient: state.email.emailRecipient,
+    loading: state.auth.loading,
+    error: state.auth.error,
+    isAuthenticated: state.auth.token !== null,
+    onLoginSuccess: state.auth.onLoginSuccess,
+    content: state.appData.data[state.language.languageSelected].languageData.pages.contactUs,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onUserContactFormDataReceived: (userData) => dispatch(
+        actions.onEmailProcessStart(userData)),
+    onContactUsRecipientChange: (recipient) => dispatch(
+        actions.onEmailRecipientChangeStart(recipient)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactUs);
