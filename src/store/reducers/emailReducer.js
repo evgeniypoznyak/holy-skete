@@ -23,10 +23,37 @@ const changeEmailRecipient = (state, action) => {
   });
 };
 
+const emailWasSuccessfullySent = (state, action) => {
+  return updateObject(state, {
+    emailSendingInProgress: false,
+    emailSuccessfullySend: true,
+  });
+};
+
+const onEmailProcessStart = (state, action) => {
+  return updateObject(state, {
+    // todo
+  });
+};
+
+const onEmailError = (state, action) => {
+  return updateObject(state, {
+    emailSendingInProgress: false,
+    emailSuccessfullySend: false,
+    emailError: true,
+  });
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.EMAIL_RECIPIENT_CHANGE:
       return changeEmailRecipient(state, action);
+    case actionTypes.EMAIL_PROCESS_START:
+      return onEmailProcessStart(state, action);
+    case actionTypes.EMAIL_SUCCESS:
+      return emailWasSuccessfullySent(state, action);
+    case actionTypes.EMAIL_ERROR:
+      return onEmailError(state, action);
     default:
       return state;
   }

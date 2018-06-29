@@ -5,12 +5,8 @@
 
 export function* onInitEmailProcessSaga(action) {
 
-  console.log(action);
-  // http://127.0.0.1:8000
 const response = yield axios.post('http://127.0.0.1:8000/email', action.userData);
   console.log(response);
-  yield 'YES!'
-  //let contentRus = yield axios.get();
 
 //  let news = {english: contentEng.data.items, russian: contentRus.data.items};
 //  yield put(actions.onSetupNewsFeed(news));
