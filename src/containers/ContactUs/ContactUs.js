@@ -59,14 +59,14 @@ class ContactUs extends Component {
     event.preventDefault();
     if (this.state.formIsValid) {
       const formData = {
-        emailRecipient: this.props.emailRecipient,
+        emailRecipient: this.props.emailData.emailRecipient,
       };
       for (let formElementIdentifier in this.state.contactForm) {
         formData[formElementIdentifier] = this.state.contactForm[formElementIdentifier].value;
       }
       this.props.onUserContactFormDataReceived(
-          formData,
-      );
+         formData,
+     );
     }
 
   };
@@ -100,7 +100,7 @@ class ContactUs extends Component {
     let frAnatolyCssClass = null;
     let frTikhonCssClass = null;
 
-    switch (this.props.emailRecipient) {
+    switch (this.props.emailData.emailRecipient) {
       case 'father Anatoly':
         frAnatolyCssClass = 'btn btn-info btn-block';
         frTikhonCssClass = 'btn btn-outline-info btn-block';
@@ -156,6 +156,28 @@ class ContactUs extends Component {
       animateClass = classes.bounceIn;
     }
 
+    let sendEmailButton = null;
+    if (!this.props.emailData.emailSendingInProgress) {
+      sendEmailButton = <button
+          className={'btn btn-lg btn-block btn-primary form-control '
+          + animateClass}
+          disabled={!this.state.formIsValid}>
+        {this.props.content.contactUsFormData.contactUsFormButton}
+      </button>;
+    } else {
+      sendEmailButton = <Spinner/>;
+    }
+
+    let emailError = null;
+    if (this.props.emailData.emailError) {
+      emailError =
+          <div className='form-group'>
+            <div className="alert alert-danger" role="alert">
+              <strong>{this.props.emailData.emailError}</strong>
+            </div>
+          </div>;
+    }
+
     return (
         <div className={classes.ContactUs}>
           <div className="container-fluid">
@@ -174,7 +196,6 @@ class ContactUs extends Component {
                       }}>
                     {this.props.content.frTikhonNameChangeButton}
                   </button>
-
                   <button
                       className={frAnatolyCssClass}
                       onClick={() => {
@@ -195,13 +216,9 @@ class ContactUs extends Component {
                   {authRedirect}
                   {errorMessage}
                   {form}
+                  {emailError}
                   <div className='form-group'>
-                    <button
-                        className={'btn btn-lg btn-block btn-primary form-control '
-                        + animateClass}
-                        disabled={!this.state.formIsValid}>
-                      {this.props.content.contactUsFormData.contactUsFormButton}
-                    </button>
+                    {sendEmailButton}
                   </div>
                 </form>
 
@@ -221,7 +238,7 @@ class ContactUs extends Component {
 const mapStateToProps = state => {
   // console.log(state);
   return {
-    emailRecipient: state.email.emailRecipient,
+    emailData: state.email,
     loading: state.auth.loading,
     error: state.auth.error,
     isAuthenticated: state.auth.token !== null,

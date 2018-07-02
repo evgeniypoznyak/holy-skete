@@ -32,7 +32,7 @@ const emailWasSuccessfullySent = (state, action) => {
 
 const onEmailProcessStart = (state, action) => {
   return updateObject(state, {
-    // todo
+    emailSendingInProgress: true,
   });
 };
 
@@ -40,7 +40,7 @@ const onEmailError = (state, action) => {
   return updateObject(state, {
     emailSendingInProgress: false,
     emailSuccessfullySend: false,
-    emailError: true,
+    emailError: action.error,
   });
 };
 

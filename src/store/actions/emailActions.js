@@ -23,3 +23,17 @@ export const onEmailRecipientChangeStart = (emailRecipient) => {
     emailRecipient: emailRecipient,
   };
 };
+
+export const onEmailErrorHappened = (error) => {
+  return {
+    type: actionTypes.EMAIL_ERROR,
+    error: error,
+  };
+};
+
+export const onEmailSecusess = () => {
+  return {
+    type: actionTypes.EMAIL_SUCCESS,
+  };
+};
+

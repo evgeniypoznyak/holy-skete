@@ -26,5 +26,7 @@ export {
 
 export {
   onEmailProcessStart,
-    onEmailRecipientChangeStart
+    onEmailRecipientChangeStart,
+    onEmailErrorHappened,
+    onEmailSecusess,
 } from './emailActions';
