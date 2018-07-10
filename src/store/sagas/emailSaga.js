@@ -7,7 +7,7 @@ export function* onInitEmailProcessSaga(action) {
 
   let errorHappened = false;
 
-const response = yield axios.post('http://127.0.0.1:8000/email', action.userData)
+const response = yield axios.post('http://data.holyskete.com/email', action.userData)
 .catch( (error) => {
   errorHappened = error.message;
 });

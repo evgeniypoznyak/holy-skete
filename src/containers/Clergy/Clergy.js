@@ -116,12 +116,12 @@ class Clergy extends Component {
                       <div>{frAnatoliy.addressLine2}</div>
                       <div>
                         <hr/>
-                        <button
-                            className="btn btn-outline-success btn-lg"
-                            onClick={() => {
-                              this.emailButtonHandler('father Anatoly');
-                            }}
-                        >{frAnatoliy.buttonText}</button>
+                        {/*<button*/}
+                            {/*className="btn btn-outline-success btn-lg"*/}
+                            {/*onClick={() => {*/}
+                              {/*this.emailButtonHandler('father Anatoly');*/}
+                            {/*}}*/}
+                        {/*>{frAnatoliy.buttonText}</button>*/}
                       </div>
                     </div>
 

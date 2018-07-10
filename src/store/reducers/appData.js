@@ -76,7 +76,8 @@ const initialState = {
               contactUsFormButton: 'Send',
               contactUsFormInputMessage: 'Include your message here...',
               contactUsFormInputName: 'Your Name',
-              contactUsFormInputEmail: 'Your E-Mail'
+              contactUsFormInputEmail: 'Your E-Mail',
+              emailSuccessfullySend: 'Your email was successfully sent. Thank you.',
             },
             changeEmailRecipientText: 'Change Email Recipient',
             frTikhonNameChangeButton: 'father Tikhon',
@@ -220,7 +221,8 @@ const initialState = {
               contactUsFormButton: 'Отправить',
               contactUsFormInputMessage: 'Укажите здесь ваше сообщение здесь',
               contactUsFormInputName: 'Ваше имя',
-              contactUsFormInputEmail: 'Ваша электронная почта'
+              contactUsFormInputEmail: 'Ваша электронная почта',
+              emailSuccessfullySend: 'Ваше сообщение отправлено. Спасибо.',
             },
             changeEmailRecipientText: 'Изменить получателя письма',
             frTikhonNameChangeButton: 'отец Тихон',
