@@ -6,6 +6,7 @@ import hierarchUrl from '../../assets/images/clergy/hierarch.jpg';
 import frTikhonUrl from '../../assets/images/clergy/fr_tikhon.jpg';
 import frAnatoliyUrl from '../../assets/images/clergy/fr_anatoliy.jpg';
 import * as actions from '../../store/actions';
+import Modal from '../../components/UI/Modal/Modal';
 
 class Clergy extends Component {
 
@@ -30,6 +31,7 @@ class Clergy extends Component {
       addressLine1: this.props.content.rector.clergyRectorAddress1,
       addressLine2: this.props.content.rector.clergyRectorAddress2,
       buttonText: this.props.content.rector.clergyRectorEmailButtonText,
+      biography: this.props.content.rector.biography,
     };
 
     const frAnatoliy = {
@@ -38,6 +40,16 @@ class Clergy extends Component {
       addressLine2: this.props.content.priest2.clergyPriest2Address2,
       buttonText: this.props.content.priest2.clergyPriest2EmailButtonText,
     };
+
+    let frTikhonBiography = null;
+    if (frTikhon.biography.length > 0) {
+
+      let modalContent = frTikhon.biography.map(textLine =>
+          <div>{textLine}</div>
+      );
+
+      frTikhonBiography = <Modal>{modalContent}</Modal>;
+    }
 
     return (
         <div className={classes.Clergy}>
@@ -79,6 +91,7 @@ class Clergy extends Component {
                       <div>{frTikhon.title}</div>
                       <div>{frTikhon.addressLine1}</div>
                       <div>{frTikhon.addressLine2}</div>
+                      <div>{frTikhonBiography}</div>
                       <div>
                         <hr/>
                         <button
@@ -117,10 +130,10 @@ class Clergy extends Component {
                       <div>
                         <hr/>
                         {/*<button*/}
-                            {/*className="btn btn-outline-success btn-lg"*/}
-                            {/*onClick={() => {*/}
-                              {/*this.emailButtonHandler('father Anatoly');*/}
-                            {/*}}*/}
+                        {/*className="btn btn-outline-success btn-lg"*/}
+                        {/*onClick={() => {*/}
+                        {/*this.emailButtonHandler('father Anatoly');*/}
+                        {/*}}*/}
                         {/*>{frAnatoliy.buttonText}</button>*/}
                       </div>
                     </div>
