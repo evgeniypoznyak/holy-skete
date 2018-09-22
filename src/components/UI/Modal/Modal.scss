@@ -1,3 +1,26 @@
+.BackDropModal {
+ position: absolute;
+ background: #2e2e2ed6;
+ height: 100%;
+ width: 100%;
+ top: 0px;
+ margin: auto;
+ z-index: 1;
+}
+
 .Modal {
- padding: auto;
+ position: relative;
+ z-index: 20;
+ display: flex;
+ align-items: center;
+ //top: 50%;
+ //transform: translateY(-50%);
+}
+
+.ModalTitle {
+
+}
+
+.ModalBody {
+
 }

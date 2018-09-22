@@ -7,8 +7,20 @@ import frTikhonUrl from '../../assets/images/clergy/fr_tikhon.jpg';
 import frAnatoliyUrl from '../../assets/images/clergy/fr_anatoliy.jpg';
 import * as actions from '../../store/actions';
 import Modal from '../../components/UI/Modal/Modal';
+import {updateObject} from '../../shared/utility';
 
 class Clergy extends Component {
+
+  state = {
+    openModal: false,
+  };
+
+  openCloseModal = () => {
+    const updatedOpenCloseModal = updateObject(
+        this.state, {openModal: !this.state.openModal}
+        );
+    this.setState(updatedOpenCloseModal);
+  };
 
   emailButtonHandler(emailRecipient) {
     this.props.onContactUsRecipientChange(emailRecipient);
@@ -32,6 +44,7 @@ class Clergy extends Component {
       addressLine2: this.props.content.rector.clergyRectorAddress2,
       buttonText: this.props.content.rector.clergyRectorEmailButtonText,
       biography: this.props.content.rector.biography,
+      biographyButton: this.props.content.rector.clergyRectorBiographyButtonText,
     };
 
     const frAnatoliy = {
@@ -44,14 +57,17 @@ class Clergy extends Component {
     let frTikhonBiography = null;
     if (frTikhon.biography.length > 0) {
 
-      let modalContent = frTikhon.biography.map(textLine =>
-          <div>{textLine}</div>
+      let modalContent = frTikhon.biography.map((textLine, index) =>
+          <div key={index}>{textLine}</div>,
       );
 
-      frTikhonBiography = <Modal>{modalContent}</Modal>;
+      frTikhonBiography =
+          <Modal openCloseModal={this.openCloseModal}>
+            {modalContent}
+          </Modal>;
     }
 
-    return (
+    let mainContent =
         <div className={classes.Clergy}>
           <div className="container">
 
@@ -91,7 +107,11 @@ class Clergy extends Component {
                       <div>{frTikhon.title}</div>
                       <div>{frTikhon.addressLine1}</div>
                       <div>{frTikhon.addressLine2}</div>
-                      <div>{frTikhonBiography}</div>
+                      <button 
+                          className={'btn btn-outline-info btn-sm'} 
+                          onClick={this.openCloseModal}
+                      >{frTikhon.biographyButton}
+                      </button>
                       <div>
                         <hr/>
                         <button
@@ -146,6 +166,21 @@ class Clergy extends Component {
 
           </div>
         </div>
+
+
+    let display = mainContent;
+
+    if (this.state.openModal) {
+
+      display = frTikhonBiography;
+
+    }
+
+
+    return (
+       <div>
+         {display}
+       </div>
     );
 
   }

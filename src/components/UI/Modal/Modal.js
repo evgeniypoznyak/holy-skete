@@ -1,8 +1,38 @@
-import React from 'react';
+import React, {Component} from 'react';
 import classes from './Modal.scss';
 
-const Modal = (props) => (
-    <div className={classes.Modal}>{props.children}</div>
-);
+class Modal extends Component {
+
+  render() {
+
+    let modal  =
+          <div
+              onClick={this.props.openCloseModal}
+
+              className={classes.BackDropModal}>
+
+            <div
+
+                className={classes.Modal}>
+
+              {this.props.children}
+
+            </div>
+
+
+          </div>;
+
+
+    return (
+
+        <div>
+          {modal}
+        </div>
+
+    );
+
+  }
+
+}
 
 export default Modal;

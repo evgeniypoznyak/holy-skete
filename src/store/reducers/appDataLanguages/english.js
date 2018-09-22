@@ -59,6 +59,7 @@ export const english = {
           clergyRectorAddress2: 'Buena, NJ 08310',
           clergyRectorEmailButtonText: 'Write a email',
           biography: biography.frTikhon.english,
+          clergyRectorBiographyButtonText: 'Biography',
         },
         priest2: {
           clergyPriest2Name: 'Priest Anatoly Revitskyy',
