@@ -15,11 +15,12 @@ class Clergy extends Component {
     openModal: false,
   };
 
-  openCloseModal = () => {
+  openModalParent = () => {
     const updatedOpenCloseModal = updateObject(
         this.state, {openModal: !this.state.openModal}
-        );
+    );
     this.setState(updatedOpenCloseModal);
+
   };
 
   emailButtonHandler(emailRecipient) {
@@ -45,6 +46,7 @@ class Clergy extends Component {
       buttonText: this.props.content.rector.clergyRectorEmailButtonText,
       biography: this.props.content.rector.biography,
       biographyButton: this.props.content.rector.clergyRectorBiographyButtonText,
+      biographyTitle: this.props.content.rector.clergyRectorBiographyTitle,
     };
 
     const frAnatoliy = {
@@ -61,10 +63,18 @@ class Clergy extends Component {
           <div key={index}>{textLine}</div>,
       );
 
-      frTikhonBiography =
-          <Modal openCloseModal={this.openCloseModal}>
-            {modalContent}
-          </Modal>;
+      frTikhonBiography = null;
+
+
+
+
+    }
+
+    if (this.state.openModal) {
+      frTikhonBiography = <Modal
+          title={frTikhon.biographyTitle}
+          modalButtonText={frTikhon.biographyButton}>{frTikhon.biographyButton}
+      </Modal>;
     }
 
     let mainContent =
@@ -108,10 +118,11 @@ class Clergy extends Component {
                       <div>{frTikhon.addressLine1}</div>
                       <div>{frTikhon.addressLine2}</div>
                       <button 
-                          className={'btn btn-outline-info btn-sm'} 
-                          onClick={this.openCloseModal}
+                          className={'btn btn-outline-info btn-sm'}
+                          onClick={this.openModalParent}
                       >{frTikhon.biographyButton}
                       </button>
+                      <div>{frTikhonBiography}</div>
                       <div>
                         <hr/>
                         <button
@@ -169,13 +180,6 @@ class Clergy extends Component {
 
 
     let display = mainContent;
-
-    if (this.state.openModal) {
-
-      display = frTikhonBiography;
-
-    }
-
 
     return (
        <div>

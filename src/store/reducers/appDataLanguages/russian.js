@@ -59,6 +59,7 @@ export const russian = {
           clergyRectorEmailButtonText: 'Написать письмо',
           biography: biography.frTikhon.russian,
           clergyRectorBiographyButtonText: 'Биография',
+          clergyRectorBiographyTitle: 'Биография',
         },
         priest2: {
           clergyPriest2Name: 'Иерей Анатолий Ревицкий',

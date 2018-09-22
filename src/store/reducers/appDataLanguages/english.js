@@ -60,6 +60,7 @@ export const english = {
           clergyRectorEmailButtonText: 'Write a email',
           biography: biography.frTikhon.english,
           clergyRectorBiographyButtonText: 'Biography',
+          clergyRectorBiographyTitle: 'Biography',
         },
         priest2: {
           clergyPriest2Name: 'Priest Anatoly Revitskyy',
