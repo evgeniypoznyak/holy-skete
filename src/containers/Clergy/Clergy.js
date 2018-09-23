@@ -203,7 +203,7 @@ class Clergy extends Component {
                                           onClick={() => {
                                               this.emailButtonHandler('father Dimitri');
                                           }}
-                                      >{frTikhon.buttonText}</button>
+                                      >{deaconDimitri.buttonText}</button>
                                   </div>
                               </div>
                           </div>

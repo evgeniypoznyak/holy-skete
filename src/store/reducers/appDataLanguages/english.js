@@ -88,7 +88,8 @@ export const english = {
         },
         changeEmailRecipientText: 'Change Email Recipient',
         frTikhonNameChangeButton: 'father Tikhon',
-        frAnatolyNameChangeButton: 'father Anatoly'
+        frAnatolyNameChangeButton: 'father Anatoly',
+        deaconDimitriNameChangeButton: 'deacon Dimitri'
       },
       directions: {
         url: 'http://maps.google.com/?q=333+Weymouth+Rd,+Buena,+NJ+08310,+United+States',
