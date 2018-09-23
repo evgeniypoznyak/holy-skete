@@ -97,17 +97,18 @@ class ContactUs extends Component {
 
     render() {
 
-        let frAnatolyCssClass = null;
+        //let frAnatolyCssClass = null;
+        let frDimitriCssClass = null;
         let frTikhonCssClass = null;
 
         switch (this.props.emailData.emailRecipient) {
-            case 'father Anatoly':
-                frAnatolyCssClass = 'btn btn-info btn-block';
+            case 'father Dimitri':
+                frDimitriCssClass = 'btn btn-info btn-block';
                 frTikhonCssClass = 'btn btn-outline-info btn-block';
                 break;
             case 'father Tikhon':
                 frTikhonCssClass = 'btn btn-info btn-block';
-                frAnatolyCssClass = 'btn btn-outline-info btn-block';
+                frDimitriCssClass = 'btn btn-outline-info btn-block';
                 break;
             default:
         }
@@ -190,27 +191,27 @@ class ContactUs extends Component {
                     <div className="row justify-content-center">
                         <div className="col-sm-12 col-md-6">
 
-                            {/*<div className={classes.ChangeRecipientBlock}>*/}
-                                {/*<div className="h6">*/}
-                                    {/*{this.props.content.changeEmailRecipientText}*/}
-                                {/*</div>*/}
+                            <div className={classes.ChangeRecipientBlock}>
+                                <div className="h6">
+                                    {this.props.content.changeEmailRecipientText}
+                                </div>
 
-                                {/*<button*/}
-                                    {/*className={frTikhonCssClass}*/}
-                                    {/*onClick={() => {*/}
-                                        {/*this.emailRecipientButtonHandler('father Tikhon');*/}
-                                    {/*}}>*/}
-                                    {/*{this.props.content.frTikhonNameChangeButton}*/}
-                                {/*</button>*/}
-                                {/*<button*/}
-                                    {/*className={frAnatolyCssClass}*/}
-                                    {/*onClick={() => {*/}
-                                        {/*this.emailRecipientButtonHandler('father Anatoly');*/}
-                                    {/*}}>*/}
-                                    {/*{this.props.content.frAnatolyNameChangeButton}*/}
-                                {/*</button>*/}
+                                <button
+                                    className={frTikhonCssClass}
+                                    onClick={() => {
+                                        this.emailRecipientButtonHandler('father Tikhon');
+                                    }}>
+                                    {this.props.content.frTikhonNameChangeButton}
+                                </button>
+                                <button
+                                    className={frDimitriCssClass}
+                                    onClick={() => {
+                                        this.emailRecipientButtonHandler('father Dimitri');
+                                    }}>
+                                    {this.props.content.deaconDimitriNameChangeButton}
+                                </button>
 
-                            {/*</div>*/}
+                            </div>
 
 
                             <div className="h1 text-center ">

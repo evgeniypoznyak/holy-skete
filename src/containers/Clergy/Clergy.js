@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import hierarchUrl from '../../assets/images/clergy/hierarch.jpg';
 import frTikhonUrl from '../../assets/images/clergy/fr_tikhon.jpg';
 import frAnatoliyUrl from '../../assets/images/clergy/fr_anatoliy.jpg';
+import deaconDimitriUrl from '../../assets/images/clergy/deaconDimitri.jpg';
 import * as actions from '../../store/actions';
 import Modal from '../../components/UI/Modal/Modal';
 import {updateObject} from '../../shared/utility';
@@ -56,6 +57,14 @@ class Clergy extends Component {
       buttonText: this.props.content.priest2.clergyPriest2EmailButtonText,
     };
 
+    const deaconDimitri = {
+      name: this.props.content.deacon1.name,
+      addressLine1: this.props.content.deacon1.address1,
+      addressLine2: this.props.content.deacon1.address2,
+      buttonText: this.props.content.deacon1.emailButtonText,
+    };
+
+    return (
     let frTikhonBiography = null;
     if (frTikhon.biography.length > 0) {
 
@@ -117,7 +126,7 @@ class Clergy extends Component {
                       <div>{frTikhon.title}</div>
                       <div>{frTikhon.addressLine1}</div>
                       <div>{frTikhon.addressLine2}</div>
-                      <button 
+                      <button
                           className={'btn btn-outline-info btn-sm'}
                           onClick={this.openModalParent}
                       >{frTikhon.biographyButton}
@@ -174,6 +183,37 @@ class Clergy extends Component {
                 </div>
               </div>
             </div>
+
+              <div className={'row ' + classes.ClergyRow}>
+                  <div className="col-sm-6 order-1 order-sm-0">
+                      <div
+                          className="container d-flex h-100 justify-content-center align-items-center">
+                          <div
+                              className={'row justify-content-center ' +
+                              classes.ClergyDescription}>
+                              <div className="container-fluid text-center">
+                                  <div>{deaconDimitri.name}</div>
+                                  <div>{deaconDimitri.title}</div>
+                                  <div>{deaconDimitri.addressLine1}</div>
+                                  <div>{deaconDimitri.addressLine2}</div>
+                                  <div>
+                                      <hr/>
+                                      <button
+                                          className="btn btn-outline-success btn-lg"
+                                          onClick={() => {
+                                              this.emailButtonHandler('father Dimitri');
+                                          }}
+                                      >{frTikhon.buttonText}</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div className="col-sm-6">
+                      <img src={deaconDimitriUrl} className="img-fluid shadow"
+                           alt={'img'}/>
+                  </div>
+              </div>
 
           </div>
         </div>
