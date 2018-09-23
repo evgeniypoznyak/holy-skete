@@ -22,6 +22,7 @@ export {
   onSetupCalendar,
   onInitNews,
   onInitCalendar,
+  onModalOpenClose,
 } from './appData';
 
 export {

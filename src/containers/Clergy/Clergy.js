@@ -8,20 +8,11 @@ import frAnatoliyUrl from '../../assets/images/clergy/fr_anatoliy.jpg';
 import deaconDimitriUrl from '../../assets/images/clergy/deaconDimitri.jpg';
 import * as actions from '../../store/actions';
 import Modal from '../../components/UI/Modal/Modal';
-import {updateObject} from '../../shared/utility';
 
 class Clergy extends Component {
 
-  state = {
-    openModal: false,
-  };
-
   openModalParent = () => {
-    const updatedOpenCloseModal = updateObject(
-        this.state, {openModal: !this.state.openModal}
-    );
-    this.setState(updatedOpenCloseModal);
-
+    this.props.onModalOpenClose(true);
   };
 
   emailButtonHandler(emailRecipient) {
@@ -64,23 +55,20 @@ class Clergy extends Component {
       buttonText: this.props.content.deacon1.emailButtonText,
     };
 
-
     let frTikhonBiography = null;
-    if (frTikhon.biography.length > 0) {
 
-      let modalContent = frTikhon.biography.map((textLine, index) =>
-          <div key={index}>{textLine}</div>,
-      );
 
-      frTikhonBiography = null;
 
-    }
+    if (this.props.modalOpen) {
+      if (frTikhon.biography.length > 0) {
+        let modalContent = frTikhon.biography.map((textLine, index) =>
+            <div key={index}>{textLine}</div>,
+        );
+        frTikhonBiography = <Modal
+            title={frTikhon.biographyTitle}>{modalContent}
+        </Modal>;
+      }
 
-    if (this.state.openModal) {
-      frTikhonBiography = <Modal
-          title={frTikhon.biographyTitle}
-          modalButtonText={frTikhon.biographyButton}>{frTikhon.biographyButton}
-      </Modal>;
     }
 
     let mainContent =
@@ -215,7 +203,6 @@ class Clergy extends Component {
           </div>
         </div>
 
-
     let display = mainContent;
 
     return (
@@ -230,6 +217,7 @@ class Clergy extends Component {
 
 const mapStateToProps = state => {
   return {
+    modalOpen: state.appData.openCloseModal,
     language: state.language.languageSelected,
     content: state.appData.data[state.language.languageSelected].languageData.pages.clergy,
     russian: state.appData.data.russian,
@@ -241,6 +229,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onContactUsRecipientChange: (recipient) => dispatch(
         actions.onEmailRecipientChangeStart(recipient)),
+    onModalOpenClose: (modalStatus) => dispatch(
+        actions.onModalOpenClose(modalStatus)
+    ),
   };
 };
 

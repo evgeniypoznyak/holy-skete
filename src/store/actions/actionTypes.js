@@ -29,6 +29,8 @@ export const EMAIL_IN_PROGRESS = 'EMAIL_IN_PROGRESS';
 export const EMAIL_SUCCESS = 'EMAIL_SUCCESS';
 export const EMAIL_ERROR = 'EMAIL_ERROR';
 
+export const MODAL_OPEN_CLOSE = 'MODAL_OPEN_CLOSE';
+
 
 
 

@@ -73,7 +73,7 @@ export const russian = {
           title: '',
           address1: '905 Cable Hill Drive',
           address2: 'Springfield, PA 19064',
-          emailButtonText: 'Write a email',
+          emailButtonText: 'Написать письмо',
         },
       },
       contactUs: {

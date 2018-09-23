@@ -9,6 +9,7 @@ const initialState = {
     english: englishAppData,
     russian: russianAppData,
   },
+  openCloseModal: false,
 };
 
 const onDataReceived = (state, action) => {
@@ -84,6 +85,12 @@ const setupCalendar = (state, action) => {
     return updateObject(state, objectToUpdate);
 };
 
+const openCloseModal = (state, action) => {
+  const objectToUpdate = {openCloseModal: action.modalStatus};
+  return updateObject(state, objectToUpdate);
+}
+
+
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.DATA_RECEIVED:
@@ -92,6 +99,8 @@ const reducer = (state = initialState, action) => {
             return setupNewsFeed(state, action);
         case actionTypes.SETUP_CALENDAR:
             return setupCalendar(state, action);
+        case actionTypes.MODAL_OPEN_CLOSE:
+          return openCloseModal(state, action);
         default:
             return state;
     }

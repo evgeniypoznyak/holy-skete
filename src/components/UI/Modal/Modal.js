@@ -1,24 +1,14 @@
 import React, {Component} from 'react';
 import classes from './Modal.scss';
 import {updateObject} from '../../../shared/utility';
+import * as actions from '../../../store/actions';
+import connect from 'react-redux/es/connect/connect';
 
 class Modal extends Component {
 
-  state = {
-    openModal: true,
+  closeModal = () => {
+    this.props.onModalOpenClose(false);
   };
-
-  openCloseModal = (e) => {
-    e.stopPropagation();
-    const updatedOpenCloseModal = updateObject(
-        this.state, {openModal: !this.state.openModal}
-    );
-    this.setState(updatedOpenCloseModal);
-  };
-
-  componentDidMount() {
-    this.setState({openModal: this.props.openModal})
-  }
 
   render() {
 
@@ -29,7 +19,7 @@ class Modal extends Component {
 
             <div className={classes.ModalClose}>
               <button
-                  onClick={this.openCloseModal}
+                  onClick={this.closeModal}
                   className='btn btn-sm btn-danger'>X</button>
             </div>
 
@@ -50,12 +40,12 @@ class Modal extends Component {
         </div>;
 
 
+
     let display = null;
 
-    if (this.state.openModal) {
+    if (this.props.modalOpen) {
       display = modal;
     }
-
 
     return (
 
@@ -69,4 +59,18 @@ class Modal extends Component {
 
 }
 
-export default Modal;
+const mapStateToProps = state => {
+  return {
+    modalOpen: state.appData.openCloseModal,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onModalOpenClose: (modalStatus) => dispatch(
+        actions.onModalOpenClose(modalStatus)
+    ),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

@@ -32,3 +32,10 @@ export const onSetupCalendar = (calendar) => {
     calendar: calendar,
   };
 };
+
+export const onModalOpenClose = (modalStatus) => {
+  return {
+    modalStatus: modalStatus,
+    type: actionTypes.MODAL_OPEN_CLOSE,
+  };
+};
