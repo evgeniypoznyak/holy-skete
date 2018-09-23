@@ -74,9 +74,6 @@ class Clergy extends Component {
 
       frTikhonBiography = null;
 
-
-
-
     }
 
     if (this.state.openModal) {
