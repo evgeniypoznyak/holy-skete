@@ -68,12 +68,12 @@ class Clergy extends Component {
     }
 
     if (this.props.modalOpen) {
-        let modalContent = frTikhon.biography.map((textLine, index) =>
-            <div key={index}>{textLine}</div>,
-        );
+        // let modalContent = frTikhon.biography.map((textLine, index) =>
+        //     <div key={index}>{textLine}</div>,
+        // );
         frTikhonBiography = <Modal
-            title={frTikhon.biographyTitle}>{modalContent}
-        </Modal>;
+            paragraphs={frTikhon.biography}
+            title={frTikhon.biographyTitle}/>;
     }
 
     let mainContent =

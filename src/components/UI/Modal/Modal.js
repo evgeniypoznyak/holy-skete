@@ -3,6 +3,7 @@ import classes from './Modal.scss';
 import {updateObject} from '../../../shared/utility';
 import * as actions from '../../../store/actions';
 import connect from 'react-redux/es/connect/connect';
+import MainContent from '../../MainContent/MainContent';
 
 class Modal extends Component {
 
@@ -11,7 +12,6 @@ class Modal extends Component {
   };
 
   render() {
-
     let modal =
         <div className={classes.BackDropModal}>
 
@@ -20,7 +20,8 @@ class Modal extends Component {
             <div className={classes.ModalClose}>
               <button
                   onClick={this.closeModal}
-                  className='btn btn-sm btn-danger'>X</button>
+                  className='btn btn-sm btn-danger'>X
+              </button>
             </div>
 
             <div className={classes.ModalTitle}>
@@ -28,18 +29,13 @@ class Modal extends Component {
             </div>
 
             <div className={classes.ModalBody}>
-              <div>
-                {this.props.children}
-              </div>
+              <MainContent paragraphs={this.props.paragraphs}/>
             </div>
-
 
           </div>
 
 
         </div>;
-
-
 
     let display = null;
 
@@ -68,7 +64,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onModalOpenClose: (modalStatus) => dispatch(
-        actions.onModalOpenClose(modalStatus)
+        actions.onModalOpenClose(modalStatus),
     ),
   };
 };
