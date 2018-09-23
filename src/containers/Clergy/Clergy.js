@@ -116,7 +116,6 @@ class Clergy extends Component {
                       <div>{frTikhon.title}</div>
                       <div>{frTikhon.addressLine1}</div>
                       <div>{frTikhon.addressLine2}</div>
-
                       <div>{frTikhonBiography}</div>
                       <div>{biographyButton}</div>
                       <div>

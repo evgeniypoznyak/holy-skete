@@ -58,8 +58,8 @@ export const russian = {
           clergyRectorAddress2: 'Buena, NJ 08310',
           clergyRectorEmailButtonText: 'Написать письмо',
           biography: biography.frTikhon.russian,
-          clergyRectorBiographyButtonText: 'Биография',
-          clergyRectorBiographyTitle: 'Биография',
+          clergyRectorBiographyButtonText: 'АВТОБИОГРАФИЯ',
+          clergyRectorBiographyTitle: 'АВТОБИОГРАФИЯ',
         },
         priest2: {
           clergyPriest2Name: 'Иерей Анатолий Ревицкий',

@@ -10,6 +10,7 @@
 }
 
 .Modal {
+  text-align: left;
   position: relative;
   z-index: 2;
   margin-top: 5rem;
@@ -28,6 +29,7 @@
 }
 
 .ModalTitle {
+  text-align: center;
   position: fixed;
   width: 100%;
   background: #0282f4;
@@ -37,7 +39,11 @@
 }
 
 .ModalBody {
-margin-top: 2rem;
+  margin-top: 2rem;
+  font-family: Prata, normal;
+  line-height: 3.0;
+  font-size: 1.3rem;
+  padding: 1rem;
 }
 
 //SCROLLBAR
