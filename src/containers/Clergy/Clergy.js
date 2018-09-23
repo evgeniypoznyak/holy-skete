@@ -64,7 +64,7 @@ class Clergy extends Component {
       buttonText: this.props.content.deacon1.emailButtonText,
     };
 
-    return (
+
     let frTikhonBiography = null;
     if (frTikhon.biography.length > 0) {
 

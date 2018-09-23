@@ -68,6 +68,13 @@ export const russian = {
           clergyPriest2Address2: 'Philadelphia, PA 19116',
           clergyPriest2EmailButtonText: 'Написать письмо',
         },
+        deacon1: {
+          name: 'Диакон Димитрий Креницкий',
+          title: '',
+          address1: '905 Cable Hill Drive',
+          address2: 'Springfield, PA 19064',
+          emailButtonText: 'Write a email',
+        },
       },
       contactUs: {
         contactUsFormData: {
