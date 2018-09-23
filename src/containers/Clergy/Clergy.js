@@ -56,19 +56,24 @@ class Clergy extends Component {
     };
 
     let frTikhonBiography = null;
+    let biographyButton = null;
 
 
+    if (frTikhon.biography.length > 0) {
+      biographyButton = <button
+          className={'btn btn-outline-info btn-sm'}
+          onClick={this.openModalParent}
+      >{frTikhon.biographyButton}
+      </button>;
+    }
 
     if (this.props.modalOpen) {
-      if (frTikhon.biography.length > 0) {
         let modalContent = frTikhon.biography.map((textLine, index) =>
             <div key={index}>{textLine}</div>,
         );
         frTikhonBiography = <Modal
             title={frTikhon.biographyTitle}>{modalContent}
         </Modal>;
-      }
-
     }
 
     let mainContent =
@@ -111,12 +116,9 @@ class Clergy extends Component {
                       <div>{frTikhon.title}</div>
                       <div>{frTikhon.addressLine1}</div>
                       <div>{frTikhon.addressLine2}</div>
-                      <button
-                          className={'btn btn-outline-info btn-sm'}
-                          onClick={this.openModalParent}
-                      >{frTikhon.biographyButton}
-                      </button>
+
                       <div>{frTikhonBiography}</div>
+                      <div>{biographyButton}</div>
                       <div>
                         <hr/>
                         <button
@@ -169,46 +171,46 @@ class Clergy extends Component {
               </div>
             </div>
 
-              <div className={'row ' + classes.ClergyRow}>
-                  <div className="col-sm-6 order-1 order-sm-0">
-                      <div
-                          className="container d-flex h-100 justify-content-center align-items-center">
-                          <div
-                              className={'row justify-content-center ' +
-                              classes.ClergyDescription}>
-                              <div className="container-fluid text-center">
-                                  <div>{deaconDimitri.name}</div>
-                                  <div>{deaconDimitri.title}</div>
-                                  <div>{deaconDimitri.addressLine1}</div>
-                                  <div>{deaconDimitri.addressLine2}</div>
-                                  <div>
-                                      <hr/>
-                                      <button
-                                          className="btn btn-outline-success btn-lg"
-                                          onClick={() => {
-                                              this.emailButtonHandler('father Dimitri');
-                                          }}
-                                      >{deaconDimitri.buttonText}</button>
-                                  </div>
-                              </div>
-                          </div>
+            <div className={'row ' + classes.ClergyRow}>
+              <div className="col-sm-6 order-1 order-sm-0">
+                <div
+                    className="container d-flex h-100 justify-content-center align-items-center">
+                  <div
+                      className={'row justify-content-center ' +
+                      classes.ClergyDescription}>
+                    <div className="container-fluid text-center">
+                      <div>{deaconDimitri.name}</div>
+                      <div>{deaconDimitri.title}</div>
+                      <div>{deaconDimitri.addressLine1}</div>
+                      <div>{deaconDimitri.addressLine2}</div>
+                      <div>
+                        <hr/>
+                        <button
+                            className="btn btn-outline-success btn-lg"
+                            onClick={() => {
+                              this.emailButtonHandler('father Dimitri');
+                            }}
+                        >{deaconDimitri.buttonText}</button>
                       </div>
+                    </div>
                   </div>
-                  <div className="col-sm-6">
-                      <img src={deaconDimitriUrl} className="img-fluid shadow"
-                           alt={'img'}/>
-                  </div>
+                </div>
               </div>
+              <div className="col-sm-6">
+                <img src={deaconDimitriUrl} className="img-fluid shadow"
+                     alt={'img'}/>
+              </div>
+            </div>
 
           </div>
-        </div>
+        </div>;
 
     let display = mainContent;
 
     return (
-       <div>
-         {display}
-       </div>
+        <div>
+          {display}
+        </div>
     );
 
   }
@@ -230,7 +232,7 @@ const mapDispatchToProps = dispatch => {
     onContactUsRecipientChange: (recipient) => dispatch(
         actions.onEmailRecipientChangeStart(recipient)),
     onModalOpenClose: (modalStatus) => dispatch(
-        actions.onModalOpenClose(modalStatus)
+        actions.onModalOpenClose(modalStatus),
     ),
   };
 };
