@@ -11,9 +11,9 @@ const navigationItems = (props) => {
           {props.contentMenu.menuHomePage}
           </NavigationItem>
 
-        <NavigationItem link="/skete">
-          {props.contentMenu.menuSkete}
-          </NavigationItem>
+        {/*<NavigationItem link="/skete">*/}
+          {/*{props.contentMenu.menuSkete}*/}
+          {/*</NavigationItem>*/}
 
         <NavigationItem link="/cemetery">
           {props.contentMenu.menuCemetery}
