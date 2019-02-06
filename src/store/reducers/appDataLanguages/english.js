@@ -53,9 +53,9 @@ export const english = {
           clergyMetropolitanAddress2: 'New York, NY 10128-1390',
         },
         rector: {
-          clergyRectorName: 'Hegumen Tikhon (Gayfudinov)',
+          clergyRectorName: 'Abbot Tikhon (Gayfudinov)',
           clergyRectorTitle: 'Rector',
-          clergyRectorAddress1: 'Hermitage Of The Holy Protection, 333 Weymouth Road',
+          clergyRectorAddress1: 'The Hermitage Of The Holy Protection, 333 Weymouth Road',
           clergyRectorAddress2: 'Buena, NJ 08310',
           clergyRectorEmailButtonText: 'Write a email',
           biography: biography.frTikhon.english,
