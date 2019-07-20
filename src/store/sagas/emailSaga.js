@@ -5,7 +5,7 @@ import axios from 'axios/index';
 
 export function* onInitEmailProcessSaga(action) {
     let errorHappened = false;
-    const response = yield axios.post('http://data.holyskete.com/email', action.userData)
+    yield axios.post('http://data.holyskete.com/email', action.userData)
         .catch((error) => {
             errorHappened = error.message;
         });

@@ -2,10 +2,12 @@ import React, {Component} from 'react';
 import classes from './Directions.scss';
 import {connect} from 'react-redux';
 import Map from '../../components/Map/Map';
+import {API_KEY} from '../../config'
+
 class Directions extends Component {
-  API_KEY = 'AIzaSyCymnPyibrU1ythjzA2JZq2uzp77Dbnvww';
+
   googleMapsUrl = `https://maps.googleapis.com/maps/api/js?key=
-  ${this.API_KEY}&v=3.exp&libraries=geometry,drawing,places`;
+  ${API_KEY}&v=3.exp&libraries=geometry,drawing,places`;
 
   mapOptions = {
       marker: {
