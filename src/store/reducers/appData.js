@@ -5,11 +5,11 @@ import {russian as russianAppData} from './appDataLanguages/russian';
 
 
 const initialState = {
-  data: {
-    english: englishAppData,
-    russian: russianAppData,
-  },
-  openCloseModal: false,
+    data: {
+        english: englishAppData,
+        russian: russianAppData,
+    },
+    openCloseModal: false,
 };
 
 const onDataReceived = (state, action) => {
@@ -48,7 +48,7 @@ const setupNewsFeed = (state, action) => {
 };
 
 const setupCalendar = (state, action) => {
-    //console.log('action.calendar: ', action.calendar);
+    // console.log('action.calendar: ', action.calendar);
     const objectToUpdate = {
         data: {
             ...state.data,
@@ -86,9 +86,9 @@ const setupCalendar = (state, action) => {
 };
 
 const openCloseModal = (state, action) => {
-  const objectToUpdate = {openCloseModal: action.modalStatus};
-  return updateObject(state, objectToUpdate);
-}
+    const objectToUpdate = {openCloseModal: action.modalStatus};
+    return updateObject(state, objectToUpdate);
+};
 
 
 const reducer = (state = initialState, action) => {
@@ -100,7 +100,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.SETUP_CALENDAR:
             return setupCalendar(state, action);
         case actionTypes.MODAL_OPEN_CLOSE:
-          return openCloseModal(state, action);
+            return openCloseModal(state, action);
         default:
             return state;
     }

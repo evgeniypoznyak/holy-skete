@@ -4,15 +4,12 @@ import Spinner from '../../UI/Spinner/Spinner';
 import {stripHtmlTags} from '../../../shared/utility';
 
 const news = (props) => {
-
     let news = <Spinner/>;
     let preloadEnglish = null;
     let preloadRussian = null;
 
     if (props.news.newsContent.length > 0) {
-
         news = props.news.newsContent.map((newsItem) => {
-
             let imgURL = 'NEWS PICTURE';
             if (
                 newsItem &&
@@ -43,14 +40,14 @@ const news = (props) => {
                         className="card">
                         <a href={link} target={'_blank'}>
                             <img className="card-img-top" src={imgURL}
-                                 alt=""/>
+                                alt=""/>
                         </a>
                         <div className="card-body shadow">
 
                             <h5 className="card-title clearText">{title}</h5>
                             <p className="card-text">{content}</p>
                             <a href={link} target={'_blank'}
-                               className="btn btn-outline-light">{props.news.text.readMore}</a>
+                                className="btn btn-outline-light">{props.news.text.readMore}</a>
 
                         </div>
 
@@ -59,7 +56,6 @@ const news = (props) => {
                 </div>
 
             );
-
         });
 
         if (props.english[0]) {
@@ -73,7 +69,6 @@ const news = (props) => {
                     alt='' hidden={true}
                     src={imgURL}/>;
             });
-
         }
 
         if (props.russian[0]) {
@@ -91,7 +86,6 @@ const news = (props) => {
     }
 
 
-
     return (
         <div className={classes.News}>
             {news}
@@ -99,7 +93,6 @@ const news = (props) => {
             {preloadRussian}
         </div>
     );
-
 };
 
 export default news;

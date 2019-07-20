@@ -1,32 +1,32 @@
 export {
-  auth,
-  checkAuthTimeout,
-  authFail,
-  authSuccess,
-  authStart,
-  logout,
-  logoutSucceed,
-  authCheckState,
-  onLoginSuccess,
+    auth,
+    checkAuthTimeout,
+    authFail,
+    authSuccess,
+    authStart,
+    logout,
+    logoutSucceed,
+    authCheckState,
+    onLoginSuccess,
 } from './auth';
 
 export {
-  onChangeLanguageAction,
-  onChangeLanguageStartAction,
-  onShowHideSpinner,
-  initiateBrowserLanguageAction,
+    onChangeLanguageAction,
+    onChangeLanguageStartAction,
+    onShowHideSpinner,
+    initiateBrowserLanguageAction,
 } from './language';
 
 export {
-  onSetupNewsFeed,
-  onSetupCalendar,
-  onInitNews,
-  onInitCalendar,
-  onModalOpenClose,
+    onSetupNewsFeed,
+    onSetupCalendar,
+    onInitNews,
+    onInitCalendar,
+    onModalOpenClose,
 } from './appData';
 
 export {
-  onEmailProcessStart,
+    onEmailProcessStart,
     onEmailRecipientChangeStart,
     onEmailErrorHappened,
     onEmailSecusess,

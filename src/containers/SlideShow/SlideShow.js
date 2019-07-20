@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import classes from './SlideShow.scss';
-import Carousel from "../../components/Carousel/Carousel";
+import Carousel from '../../components/Carousel/Carousel';
 
 import image1 from '../../assets/images/slideshow-page/001.jpg';
 import image2 from '../../assets/images/slideshow-page/002.jpg';
@@ -15,21 +15,19 @@ import image10 from '../../assets/images/slideshow-page/010.jpg';
 import audioSlideShow from '../../assets/images/slideshow-page/slideshow.mp3';
 
 class SlideShow extends Component {
-
     pauseAudio = () => {
         const audio = document.querySelector('#audioId');
         audio.pause();
-    }
+    };
 
     playAudio = () => {
         const audio = document.querySelector('#audioId');
         audio.play();
-    }
+    };
 
 
     render() {
-
-        const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10]
+        const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10];
         return (
             <div className={classes.SlideShow}>
                 <div className='container-fluid'>
@@ -45,19 +43,17 @@ class SlideShow extends Component {
                             Your browser does not support the audio element.
                         </audio>
                     </div>
-                  <div className='row'>
-                      <div className="col">
-                          <button className='btn btn-sm btn-outline-dark' onClick={this.pauseAudio}>PAUSE</button>
-                          <button className='btn btn-sm btn-outline-success' onClick={this.playAudio}>PLAY</button>
-                      </div>
-                  </div>
+                    <div className='row'>
+                        <div className="col">
+                            <button className='btn btn-sm btn-outline-dark' onClick={this.pauseAudio}>PAUSE</button>
+                            <button className='btn btn-sm btn-outline-success' onClick={this.playAudio}>PLAY</button>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-        )
-
+        );
     }
-
 }
 
-export default SlideShow
+export default SlideShow;

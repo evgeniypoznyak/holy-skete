@@ -19,14 +19,14 @@ import './assets/styles/animate.scss';
 let composeEnhancers = compose;
 if (process.env.NODE_ENV === 'development' &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) {
-  composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+    composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 }
 
 const rootReducer = combineReducers({
-  auth: authReducer,
-  appData: appDataReducer,
-  language: languageReducer,
-  email: emailReducer,
+    auth: authReducer,
+    appData: appDataReducer,
+    language: languageReducer,
+    email: emailReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -43,9 +43,9 @@ sagaMiddleware.run(watchEmail);
 
 const app = (
     <Provider store={store}>
-      <BrowserRouter>
-        <App/>
-      </BrowserRouter>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
     </Provider>
 );
 

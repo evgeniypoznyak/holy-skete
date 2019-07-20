@@ -5,9 +5,9 @@ import {NavLink} from 'react-router-dom';
 
 const logo = (props) => (
     <div className={classes.Logo} style={{height: props.height}}>
-      <NavLink to='/'>
-        <img src={smallLogo} alt="HolySkete" />
-      </NavLink>
+        <NavLink to='/'>
+            <img src={smallLogo} alt="HolySkete" />
+        </NavLink>
     </div>
 );
 

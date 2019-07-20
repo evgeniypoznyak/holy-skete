@@ -32,5 +32,3 @@ export const EMAIL_ERROR = 'EMAIL_ERROR';
 export const MODAL_OPEN_CLOSE = 'MODAL_OPEN_CLOSE';
 
 
-
-

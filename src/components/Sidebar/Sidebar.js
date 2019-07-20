@@ -3,7 +3,7 @@ import classes from './Sidebar.scss';
 
 const sidebar = (props) => (
     <div className={classes.Sidebar}>
-      {props.children}
+        {props.children}
     </div>
 );
 

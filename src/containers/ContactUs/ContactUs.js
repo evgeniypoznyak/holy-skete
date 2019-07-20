@@ -8,7 +8,6 @@ import * as actions from '../../store/actions';
 import {connect} from 'react-redux';
 
 class ContactUs extends Component {
-
     state = {
         contactForm: {
             name: {
@@ -55,24 +54,22 @@ class ContactUs extends Component {
         formIsValid: false,
     };
 
-    submitHandler = (event) => {
+    submitHandler(event) {
         event.preventDefault();
         if (this.state.formIsValid) {
             const formData = {
                 emailRecipient: this.props.emailData.emailRecipient,
             };
-            for (let formElementIdentifier in this.state.contactForm) {
+            for (const formElementIdentifier in this.state.contactForm) {
                 formData[formElementIdentifier] = this.state.contactForm[formElementIdentifier].value;
             }
             this.props.onUserContactFormDataReceived(
                 formData,
             );
         }
+    }
 
-    };
-
-    inputChangedHandler = (event, inputIdentifier) => {
-
+    inputChangedHandler(event, inputIdentifier) {
         const updatedFormElement = updateObject(
             this.state.contactForm[inputIdentifier], {
                 value: event.target.value,
@@ -85,19 +82,17 @@ class ContactUs extends Component {
         });
 
         let formIsValid = true;
-        for (let inputIdentifier in updatedContactForm) {
+        for (const inputIdentifier in updatedContactForm) {
             formIsValid = updatedContactForm[inputIdentifier].valid && formIsValid;
         }
         this.setState({contactForm: updatedContactForm, formIsValid: formIsValid});
-    };
+    }
 
     emailRecipientButtonHandler(emailRecipient) {
         this.props.onContactUsRecipientChange(emailRecipient);
     }
 
     render() {
-
-        //let frAnatolyCssClass = null;
         let frDimitriCssClass = null;
         let frTikhonCssClass = null;
 
@@ -114,14 +109,14 @@ class ContactUs extends Component {
         }
 
         const formElementsArray = [];
-        for (let key in this.state.contactForm) {
+        for (const key in this.state.contactForm) {
             formElementsArray.push({
                 id: key,
                 config: this.state.contactForm[key],
             });
         }
 
-        let form = formElementsArray.map(formElement => (
+        let form = formElementsArray.map((formElement) => (
             <div key={formElement.id} className='form-group'>
                 <Input
                     elementType={formElement.config.elementType}
@@ -169,7 +164,7 @@ class ContactUs extends Component {
         if (this.props.emailData.emailSuccessfullySend) {
             sendEmailButton = <div className="alert alert-success text-center" role="alert">
                 {this.props.content.contactUsFormData.emailSuccessfullySend}
-            </div>
+            </div>;
         }
         if (this.props.emailData.emailSendingInProgress && !this.props.emailData.emailSuccessfullySend) {
             sendEmailButton = <Spinner/>;
@@ -237,13 +232,10 @@ class ContactUs extends Component {
 
             </div>
         );
-
     }
-
 }
 
-const mapStateToProps = state => {
-    // console.log(state);
+const mapStateToProps = (state) => {
     return {
         emailData: state.email,
         loading: state.auth.loading,
@@ -254,7 +246,7 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
         onUserContactFormDataReceived: (userData) => dispatch(
             actions.onEmailProcessStart(userData)),

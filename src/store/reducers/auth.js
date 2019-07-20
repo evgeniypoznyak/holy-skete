@@ -1,5 +1,5 @@
-import * as actionTypes from '../actions/actionTypes'
-import {updateObject} from '../../shared/utility'
+import * as actionTypes from '../actions/actionTypes';
+import {updateObject} from '../../shared/utility';
 
 const initialState = {
     token: null,
@@ -7,10 +7,10 @@ const initialState = {
     error: null,
     loading: false,
     onLoginSuccess: false,
-}
+};
 
 const authStart = ( state, action ) => {
-    return updateObject( state, { error: null, loading: true } );
+    return updateObject( state, {error: null, loading: true} );
 };
 
 const onLoginSuccess = (state, action) => {
@@ -31,12 +31,12 @@ const authSuccess = (state, action) => {
 const authFail = (state, action) => {
     return updateObject( state, {
         error: action.error,
-        loading: false
+        loading: false,
     });
 };
 
 const authLogout = (state, action) => {
-    return updateObject(state, { token: null, userId: null });
+    return updateObject(state, {token: null, userId: null});
 };
 
 const reducer = ( state = initialState, action ) => {

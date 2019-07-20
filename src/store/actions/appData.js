@@ -2,40 +2,40 @@ import * as actionTypes from './actionTypes';
 
 
 export const onInitCalendar = () => {
-  return {
-    type: actionTypes.INIT_CALENDAR,
-  }
-}
+    return {
+        type: actionTypes.INIT_CALENDAR,
+    };
+};
 
 export const onInitNews = () => {
-  return {
-    type: actionTypes.INIT_NEWS,
-  }
-}
+    return {
+        type: actionTypes.INIT_NEWS,
+    };
+};
 
 export const onDataRequest = () => {
-  return {
-    type: actionTypes.DATA_REQUEST,
-  };
+    return {
+        type: actionTypes.DATA_REQUEST,
+    };
 };
 
 export const onSetupNewsFeed = (news) => {
-  return {
-    type: actionTypes.SETUP_NEWS_FEED,
-    news: news,
-  };
+    return {
+        type: actionTypes.SETUP_NEWS_FEED,
+        news: news,
+    };
 };
 
 export const onSetupCalendar = (calendar) => {
-  return {
-    type: actionTypes.SETUP_CALENDAR,
-    calendar: calendar,
-  };
+    return {
+        type: actionTypes.SETUP_CALENDAR,
+        calendar: calendar,
+    };
 };
 
 export const onModalOpenClose = (modalStatus) => {
-  return {
-    modalStatus: modalStatus,
-    type: actionTypes.MODAL_OPEN_CLOSE,
-  };
+    return {
+        modalStatus: modalStatus,
+        type: actionTypes.MODAL_OPEN_CLOSE,
+    };
 };
